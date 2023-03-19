@@ -26,6 +26,7 @@ nav {
     align-items: center;
     background-color: var(--main-background-color-darker);
     border-bottom: 1px solid var(--main-background-color-lighter);
+    z-index: 100;
 }
 a{
     text-decoration: none;
@@ -56,5 +57,9 @@ a{
     background: var(--main-background-color-lighter);
   }
 
+canvas {
+    position: absolute;
+    z-index: 2;
+}
 
 
