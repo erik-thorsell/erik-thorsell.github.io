@@ -4,7 +4,6 @@
     --main-background-color-lighter: #b0cae9;
     --main-text-color: #eeaeca;
     --main-text-select-color: #f3c6da;
-    /*light gray color*/
     --text-color-lightgray: #ffffffbe;
     --text-color-lightgray-lighter: #e6e6e6;
 }
@@ -28,6 +27,10 @@ body{
     background-color: #8eb4e0;
 }
 
+.me {
+    height: 300px;
+    width: 500px;
+}
 a{
     text-decoration: none;
     color: inherit;
