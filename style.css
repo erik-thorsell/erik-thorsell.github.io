@@ -18,11 +18,8 @@ body{
 }
 
 .card {
-    border: 3px solid;
-    border-top-color: #b0cae9;
-    border-left-color: #b0cae9;
-    border-right-color: #6397d4;
-    border-bottom-color: #6397d4;
+    border: 2px solid #6397d4;
+    padding: 25px;
     border-radius: 5%;
     background-color: #8eb4e0;
 }
@@ -30,6 +27,8 @@ body{
 .me {
     height: 300px;
     width: 500px;
+    font-size: 50%;
+    font-weight: 400;
 }
 a{
     text-decoration: none;
@@ -41,6 +40,7 @@ a{
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: row;
 }
 
