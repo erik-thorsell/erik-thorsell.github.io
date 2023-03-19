@@ -1,9 +1,9 @@
 :root{
-    --main-background-color: #171827;
-    --main-background-color-darker: #0f0f1a;
-    --main-background-color-lighter: #34344b;
-    --main-text-color: #f1f110;
-    --main-text-select-color: #f1f19a;
+    --main-background-color: #8eb4e0;
+    --main-background-color-darker: #387bc8;
+    --main-background-color-lighter: #b0cae9;
+    --main-text-color: #eeaeca;
+    --main-text-select-color: #f3c6da;
     /*light gray color*/
     --text-color-lightgray: #ffffffbe;
     --text-color-lightgray-lighter: #e6e6e6;
@@ -11,45 +11,34 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: var(--main-background-color);
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(142,180,224,1) 100%);
+    font-family: 'Source Code Pro', monospace;
     color: var(--main-text-color);
-    font-family: 'Poppins', sans-serif;
-    /*text-select color to --main-text-select-color*/
     -webkit-tap-highlight-color: var(--main-text-select-color);
 }
-nav {
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-background-color-darker);
-    border-bottom: 1px solid var(--main-background-color-lighter);
-    z-index: 100;
+
+.card {
+    border: 3px solid;
+    border-top-color: #b0cae9;
+    border-left-color: #b0cae9;
+    border-right-color: #6397d4;
+    border-bottom-color: #6397d4;
+    border-radius: 5%;
+    background-color: #8eb4e0;
 }
+
 a{
     text-decoration: none;
     color: inherit;
 }
-.navitems {
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-    max-width: 1000px;
-    padding: 0 20px;
-    color: var(--text-color-lightgray);
-    font-weight: 600;
-    font-size: 1.1rem;
-}
+
 .landing{
-    /*set vh to 100, width to 100% and center all objects in it*/
     height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 ::selection {
@@ -57,9 +46,5 @@ a{
     background: var(--main-background-color-lighter);
   }
 
-canvas {
-    position: absolute;
-    z-index: 2;
-}
 
 
