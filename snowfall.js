@@ -1,3 +1,6 @@
+// this is not currently used, however i used it in earlier
+// stages of development to create a particle effect. almost like snowing.
+
 document.addEventListener('DOMContentLoaded', function() {
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
