@@ -64,11 +64,8 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.12);
+    background: #dee0e3;
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.3px);
-    -webkit-backdrop-filter: blur(5.3px);
     border: 1px solid #c0cfe2;
     border-radius: 7px;
     height: 50%;
@@ -157,6 +154,8 @@ a {
 .webpage {
     height: calc(100% - 35px);
     width: 100%;
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
     display: flex;
