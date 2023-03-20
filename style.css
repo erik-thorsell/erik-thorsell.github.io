@@ -33,7 +33,7 @@ a {
 
 .links {
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     width: 25%;
     min-width: 200px;
     display: flex;
