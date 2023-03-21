@@ -33,7 +33,7 @@ a {
 
 .links {
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     width: 25%;
     min-width: 200px;
     display: flex;
@@ -65,6 +65,7 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     background: #dee0e3;
+    border-radius: 16px;
     border: 1px solid #c0cfe2;
     border-radius: 7px;
     height: 50%;
@@ -151,10 +152,10 @@ a {
 
 
 .webpage {
-    background-color: #FF3CAC;
-    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
     height: calc(100% - 35px);
     width: 100%;
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
     display: flex;
