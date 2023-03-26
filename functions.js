@@ -4,6 +4,12 @@
 // - make you not need to click the icons 3 times the first time you want to open them
 // - make the interior for the whatiknow window
 // - make the interior for the links window
+// - resize windows
+
+// MAYBE
+// - maximize the window using the maximize button
+// - when you drag one to the side of the screen and your mouse touches the side an 
+//   overlay animation will play and if you release it there it will take up half of the screen.
 
 
 //define variables
