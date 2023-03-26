@@ -1,6 +1,23 @@
+//THINGS TO DO
+// - add a function to the taskbaricons to have the one with the highest z-index be slightly above the others
+// - add the circles to the remaining taskbaricons
+// - make you not need to click the icons 3 times the first time you want to open them
+// - make the interior for the whatiknow window
+// - make the interior for the links window
+
+
+//define variables
+zlist = ['aboutme', 'gdeskicon', 'terminalicon'];
+
+
+
 window.addEventListener('load', () => {
+
+    //hide the loader
     const loader = document.querySelector('.loader');
     loader.classList.add('loader-hidden');
+
+
 
     //get all the taskbaricons
     const chromeIcon = document.getElementById("chromeicon");
@@ -9,30 +26,45 @@ window.addEventListener('load', () => {
     const closeChrome = document.getElementById("closechrome");
     const minimizeChrome = document.getElementById("minimizechrome");
 
+
+
+
     //change age to my age
     document.getElementById('age').innerHTML = calculateAge(12, 10, 2007);
 
+
+
+
     //drag the windows
     dragElement(document.getElementById("aboutme"));
+    dragElement(document.getElementById("links"));
+    dragElement(document.getElementById("whatiknow"));
+
 
 
     // add a click event listener to the each taskbaricon
     closeChrome.addEventListener("click", function() {
-        chrome('close');
+        toggleElement('aboutme', 'close');
     });
     minimizeChrome.addEventListener("click", function() {
-        chrome('minimize');
+        toggleElement('aboutme', 'minimize');
     });
     chromeIcon.addEventListener("click", function() {
-        chrome('close');
+        toggleElement('aboutme', 'close');
+        zindex('aboutme');
     });
     terminalIcon.addEventListener("click", function() {
-        console.log("Button clicked!");
+        toggleElement('whatiknow', 'close');
+        zindex('whatiknow');
     });
     gDeskIcon.addEventListener("click", function() {
-        console.log("Button clicked!");
+        toggleElement('links', 'close');
+        zindex('links');
     });
 });
+
+
+
 
 //calculate my age
 function calculateAge(birthMonth, birthDay, birthYear) {
@@ -52,6 +84,9 @@ function calculateAge(birthMonth, birthDay, birthYear) {
 }
 
 
+
+
+
 // check if mobile
 document.addEventListener("DOMContentLoaded", function() {
     if (window.innerWidth <= 600) {
@@ -64,20 +99,22 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
 
+
+
+
 //drag the windows
 function dragElement(element) {
 var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 element.onmousedown = dragMouseDown;
-
 function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
     pos3 = e.clientX;
     pos4 = e.clientY;
+    zindex(element.id)
     document.onmouseup = closeDragElement;
     document.onmousemove = elementDrag;
 }
-
 function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
@@ -88,7 +125,6 @@ function elementDrag(e) {
     element.style.top = (element.offsetTop - pos2) + "px";
     element.style.left = (element.offsetLeft - pos1) + "px";
 }
-
 function closeDragElement() {
     document.onmouseup = null;
     document.onmousemove = null;
@@ -96,33 +132,62 @@ function closeDragElement() {
 }
 
 
+
+
+
 //all the iconfunctions
-function chrome(type) {
-    const aboutMe = document.getElementById('aboutme');
-    const chromeCircle = document.getElementById('chromecircle');
-    if (aboutMe.style.display == 'none') {
-        if (closeType == 'close') {
-            aboutMe.style.display = 'flex';
-            aboutMe.style.top = '50%';
-            aboutMe.style.left = '50%';
-            aboutMe.style.transform = 'translate(-50%, -50%)';
-            if (closeType == 'close') {
-                chromeCircle.style.top = '100%';
-            }
-        } else if (closeType == 'minimize'){
-            aboutMe.style.display = 'flex';
-        }
+function toggleElement(id, type) {
+    const element = document.getElementById(id);
+    if (id == 'aboutme') {
+        elementCircle = document.getElementById('chromecircle');
+    } else if (id == 'whatiknow') {
+        elementCircle = document.getElementById('terminalcircle');
+    } else if (id == 'links') {
+        elementCircle = document.getElementById('gdeskcircle');
+    }
+  
+    if (element.style.display == 'none') {
+      closeType = type;
+      if (closeType == 'close') {
+        element.style.display = 'flex';
+        element.style.top = '50%';
+        element.style.left = '50%';
+        element.style.transform = 'translate(-50%, -50%)';
+        elementCircle.style.top = '100%';
+      } else if (closeType == 'minimize'){
+        element.style.display = 'flex';
+      }
     } else {
-        if (type == 'close') {
-            aboutMe.style.display = 'none';
-            chromeCircle.style.top = 'calc(100% + 10px)';
-        }
-        if (type == 'minimize') {
-            aboutMe.style.display = 'none';
-        }
-        if (type == 'maximize') {
-            //do stuff
-        }
-        closeType = type;
+      switch (type) {
+        case 'close':
+          if (element.style.zIndex < 5) {
+            zindex(id);
+            return;
+          }
+          element.style.display = 'none';
+          elementCircle.style.top = 'calc(100% + 10px)';
+          break;
+        case 'minimize':
+          element.style.display = 'none';
+          break;
+        case 'maximize':
+          // do stuff
+          break;
+      }
+    }
+    closeType = type;
+  }
+
+
+// z-index coverage
+function zindex(element) {
+    const valueToMove = element;
+    const index = zlist.indexOf(valueToMove);
+    if (index !== -1) {
+        zlist.splice(index, 1);
+    }
+    zlist.unshift(valueToMove);
+    for (let i = 0; i < zlist.length; i++) {
+        document.getElementById(zlist[i]).style.zIndex = -i+5;
     }
 }
