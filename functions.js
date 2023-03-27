@@ -1,10 +1,10 @@
 //THINGS TO DO
-// - add a function to the taskbaricons to have the one with the highest z-index be slightly above the others
-// - add the circles to the remaining taskbaricons
+// - add titles over the taskbaricons on hover
 // - make you not need to click the icons 3 times the first time you want to open them
 // - make the interior for the whatiknow window
 // - make the interior for the links window
 // - resize windows
+// - window animations
 
 // MAYBE
 // - maximize the window using the maximize button
@@ -31,6 +31,10 @@ window.addEventListener('load', () => {
     const gDeskIcon = document.getElementById("gdeskicon");
     const closeChrome = document.getElementById("closechrome");
     const minimizeChrome = document.getElementById("minimizechrome");
+    const closegDesk = document.getElementById("closegdesk");
+    const minimizegDesk = document.getElementById("minimizegdesk");
+    const closeTerminal = document.getElementById("closeterminal");
+    const minimizeTerminal = document.getElementById("minimizeterminal");
 
 
 
@@ -51,21 +55,42 @@ window.addEventListener('load', () => {
     // add a click event listener to the each taskbaricon
     closeChrome.addEventListener("click", function() {
         toggleElement('aboutme', 'close');
+        iconfocus('none')
     });
     minimizeChrome.addEventListener("click", function() {
         toggleElement('aboutme', 'minimize');
+        iconfocus('none')
+    });
+    closegDesk.addEventListener("click", function() {
+        toggleElement('links', 'close');
+        iconfocus('none')
+    });
+    minimizegDesk.addEventListener("click", function() {
+        toggleElement('links', 'minimize');
+        iconfocus('none')
+    });
+    closeTerminal.addEventListener("click", function() {
+        toggleElement('whatiknow', 'close');
+        iconfocus('none')
+    });
+    minimizeTerminal.addEventListener("click", function() {
+        toggleElement('whatiknow', 'minimize');
+        iconfocus('none')
     });
     chromeIcon.addEventListener("click", function() {
         toggleElement('aboutme', 'close');
         zindex('aboutme');
+        iconfocus('aboutme')
     });
     terminalIcon.addEventListener("click", function() {
         toggleElement('whatiknow', 'close');
         zindex('whatiknow');
+        iconfocus('whatiknow')
     });
     gDeskIcon.addEventListener("click", function() {
         toggleElement('links', 'close');
         zindex('links');
+        iconfocus('links')
     });
 });
 
@@ -118,6 +143,7 @@ function dragMouseDown(e) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     zindex(element.id)
+    iconfocus(element.id)
     document.onmouseup = closeDragElement;
     document.onmousemove = elementDrag;
 }
@@ -146,10 +172,13 @@ function toggleElement(id, type) {
     const element = document.getElementById(id);
     if (id == 'aboutme') {
         elementCircle = document.getElementById('chromecircle');
+        elementIcon = document.getElementById('chromeicon');
     } else if (id == 'whatiknow') {
         elementCircle = document.getElementById('terminalcircle');
+        elementIcon = document.getElementById('terminalicon');
     } else if (id == 'links') {
         elementCircle = document.getElementById('gdeskcircle');
+        elementIcon = document.getElementById('gdeskicon');
     }
   
     if (element.style.display == 'none') {
@@ -159,7 +188,7 @@ function toggleElement(id, type) {
         element.style.top = '50%';
         element.style.left = '50%';
         element.style.transform = 'translate(-50%, -50%)';
-        elementCircle.style.top = '100%';
+        elementCircle.style.top = '105%';
       } else if (closeType == 'minimize'){
         element.style.display = 'flex';
       }
@@ -185,6 +214,9 @@ function toggleElement(id, type) {
   }
 
 
+
+
+
 // z-index coverage
 function zindex(element) {
     const valueToMove = element;
@@ -196,4 +228,34 @@ function zindex(element) {
     for (let i = 0; i < zlist.length; i++) {
         document.getElementById(zlist[i]).style.zIndex = -i+5;
     }
+}
+
+
+// icon focus
+function iconfocus(element) {
+  chromeIcon = document.getElementById('chromeicon');
+  terminalIcon = document.getElementById('terminalicon');
+  gDeskIcon = document.getElementById('gdeskicon');
+  switch (element) {
+    case 'aboutme':
+      chromeIcon.style.marginTop = '-5px';
+      terminalIcon.style.marginTop = '0px';
+      gDeskIcon.style.marginTop = '0px';
+      break;
+    case 'whatiknow':
+      terminalIcon.style.marginTop = '-5px';
+      gDeskIcon.style.marginTop = '0px';
+      chromeIcon.style.marginTop = '0px';
+      break;
+    case 'links':
+      chromeIcon.style.marginTop = '0px';
+      terminalIcon.style.marginTop = '0px';
+      gDeskIcon.style.marginTop = '-5px';
+      break;
+    case 'none':
+      chromeIcon.style.marginTop = '0px';
+      terminalIcon.style.marginTop = '0px';
+      gDeskIcon.style.marginTop = '0px';
+      break;
+}
 }

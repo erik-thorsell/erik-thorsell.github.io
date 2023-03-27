@@ -201,33 +201,36 @@ a {
     cursor: pointer;
     position: relative;
     transition: transform .2s ease-in-out;
+    -moz-transition: transform .2s ease-in-out;
 }
 
 .chromeicon {
-    margin-top: -35px;
     height: 70px;
     width: 70px;
+    transition: transform .2s ease-in-out, margin-top .2s ease-in-out;
 }
-.chromeicon:hover{
-    transform: translateY(-5px);
+#chromeicon:hover{
+    transform: translateY(-2px);
 }
 
 
 .terminalicon{
     height: 70px;
     width: 70px;
+    transition: transform .2s ease-in-out, margin-top .2s ease-in-out;
 }
 .terminalicon:hover{
-    transform: translateY(-5px);
+    transform: translateY(-2px);
 }
 
 
 .gdeskicon{
     height: 70px;
     width: 70px;
+    transition: transform .2s ease-in-out, margin-top .2s ease-in-out;
 }
 .gdeskicon:hover{
-    transform: translateY(-5px);
+    transform: translateY(-2px);
 }
 
 
@@ -242,19 +245,15 @@ a {
     width: 10px;
     z-index: 99;
     transition: top .2s ease-in-out;
-}
-
-.chromecircle {
-    top: 100%;
+    top: 105%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.gdeskcircle{
 
+#gdeskcircle, #terminalcircle{
+    top: calc(100% + 10px);
 }
-.terminalcircle{
 
-}
 
 
 
