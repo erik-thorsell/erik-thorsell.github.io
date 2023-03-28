@@ -5,6 +5,8 @@
 // - make the interior for the links window
 // - resize windows
 // - window animations
+// - topbar (behind the tab) div.
+// - line 85 bug. when you click the icon it will close the window but the icon will stay focused
 
 // MAYBE
 // - maximize the window using the maximize button
