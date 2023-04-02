@@ -82,17 +82,29 @@ window.addEventListener('load', () => {
     chromeIcon.addEventListener("click", function() {
         toggleElement('aboutme', 'close');
         zindex('aboutme');
-        iconfocus('aboutme')
+        if (chromeIcon.style.top = '105%'){
+          iconfocus('none')
+        } else {
+          iconfocus('aboutme')
+        }
     });
     terminalIcon.addEventListener("click", function() {
         toggleElement('whatiknow', 'close');
         zindex('whatiknow');
-        iconfocus('whatiknow')
+        if (terminalIcon.style.top = '105%'){
+          iconfocus('none')
+        } else {
+          iconfocus('whatiknow')
+        }
     });
     gDeskIcon.addEventListener("click", function() {
         toggleElement('links', 'close');
         zindex('links');
-        iconfocus('links')
+        if (gDeskIcon.style.top = '105%'){
+          iconfocus('none')
+        } else {
+          iconfocus('links')
+        }
     });
 });
 
