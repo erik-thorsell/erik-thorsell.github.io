@@ -455,9 +455,6 @@ a {
 
 
 /*links window + webpage*/
-.links {
-    display: none;
-}
 .linkspage {
     background-color: var(--amp-bg-color);
     background-image: radial-gradient(
@@ -518,9 +515,6 @@ a {
 
 
 /*what i know window + webpage*/
-.whatiknow {
-    display: none;
-}
 .whatiknowpage {
     background-color: var(--amp-bg-color);
     background-image: radial-gradient(

@@ -1,12 +1,10 @@
 //THINGS TO DO
 // - add titles over the taskbaricons on hover
-// - make you not need to click the icons 3 times the first time you want to open them
 // - make the interior for the whatiknow window
 // - make the interior for the links window
 // - resize windows
 // - window animations
 // - topbar (behind the tab) div.
-// - line 85 bug. when you click the icon it will close the window but the icon will stay focused
 
 // MAYBE
 // - maximize the window using the maximize button
@@ -47,6 +45,16 @@ window.addEventListener('load', () => {
 
 
 
+    //initiate windows
+    toggleElement('aboutme', 'close');
+    zindex('aboutme');
+    iconfocus('aboutme');
+    document.getElementById('links').style.display = 'none';
+    document.getElementById('whatiknow').style.display = 'none';
+
+
+
+    
     //drag the windows
     dragElement(document.getElementById("aboutme"));
     dragElement(document.getElementById("links"));
