@@ -1,15 +1,10 @@
 //THINGS TO DO
-// - add titles over the taskbaricons on hover
 // - make the interior for the whatiknow window
-// - make the interior for the links window
-// - resize windows
-// - window animations
 // - topbar (behind the tab) div.
 
-// MAYBE
-// - maximize the window using the maximize button
-// - when you drag one to the side of the screen and your mouse touches the side an 
-//   overlay animation will play and if you release it there it will take up half of the screen.
+//MAYBE
+// - window animations
+
 
 
 //define variables
