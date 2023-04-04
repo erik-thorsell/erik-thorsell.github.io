@@ -17,17 +17,17 @@
         <div class="taskbar mobilehide">
             <div class="icons">
                 <div class="tasktitles">Links</div>
-                <img src="assets/githubdesktopicon.png" class="gdeskicon" height="70" id="gdeskicon"/>
+                <img src="assets/githubdesktopicon.png" class="gdeskicon" height="70" id="gdeskicon" draggable="false"/>
                 <div class="circles gdeskcircle" id="gdeskcircle"></div>
             </div>
             <div class="icons">
                 <div class="tasktitles">About me</div>
-                <img src="assets/chromeicon.png" class="chromeicon" id="chromeicon" height="70"/>
+                <img src="assets/chromeicon.png" class="chromeicon" id="chromeicon" height="70" draggable="false"/>
                 <div class="circles chromecircle" id="chromecircle"></div>
             </div>
             <div class="icons">
                 <div class="tasktitles">What I know</div>
-                <img src="assets/terminalicon.png" class="terminalicon" height="70" id="terminalicon">
+                <img src="assets/terminalicon.png" class="terminalicon" height="70" id="terminalicon" draggable="false"/>
                 <div class="circles terminalcircle" id="terminalcircle"></div>
             </div>
         </div>
@@ -45,15 +45,15 @@
             <!-- Other stuff do not change these -->
             <div class="tab"></div>
             <div class="topbar">
-                <img src='assets/arrow_backward.png' id="backward" height="20"/>
-                <img src='assets/arrow_forward.png' id="forward" height="20"/>
-                <img src='assets/refresh.png' id="refresh" height="20"/>
+                <img src='assets/arrow_backward.png' id="backward" height="20" draggable="false"/>
+                <img src='assets/arrow_forward.png' id="forward" height="20" draggable="false"/>
+                <img src='assets/refresh.png' id="refresh" height="20" draggable="false"/>
                 <div class="searchbar"></div>
-                <img src='assets/options.png' id="options" height="20"/>
+                <img src='assets/options.png' id="options" height="20" draggable="false"/>
             </div>
 
             <!-- The actual webpage content -->
-            <div class="webpage aboutmepage" id="aboutme">
+            <div class="webpage aboutmepage mobilehide" id="aboutme">
                 <div class="amcontent">
                     <h1>About me</h1>
                     <div class="verticaldivider"></div>
@@ -89,11 +89,11 @@
             <!-- Other stuff do not change these -->
             <div class="tab"></div>
             <div class="topbar">
-                <img src='assets/arrow_backward.png' id="backward" height="20"/>
-                <img src='assets/arrow_forward.png' id="forward" height="20"/>
-                <img src='assets/refresh.png' id="refresh" height="20"/>
+                <img src='assets/arrow_backward.png' id="backward" height="20" draggable="false"/>
+                <img src='assets/arrow_forward.png' id="forward" height="20" draggable="false"/>
+                <img src='assets/refresh.png' id="refresh" height="20" draggable="false"/>
                 <div class="searchbar"></div>
-                <img src='assets/options.png' id="options" height="20"/>
+                <img src='assets/options.png' id="options" height="20" draggable="false"/>
             </div>
 
             <!-- The actual webpage content -->
@@ -105,13 +105,13 @@
                     <div class="horizontaldivider"></div>
                     <div class="linkscenter">
                         <a href="https://github.com/erik-thorsell">
-                            <img src="assets/github.png" width="30" height="30" title="Github" alt="Github">
+                            <img src="assets/github.png" width="30" height="30" title="Github" alt="Github" draggable="false">
                         </a>
                         <a href="https://discordapp.com/users/441246020785930260">
-                            <img src="assets/discord.png" width="30" height="30" title="Discord" alt="Discord"/>
+                            <img src="assets/discord.png" width="30" height="30" title="Discord" alt="Discord" draggable="false"/>
                         </a>
                         <a href="https://guilded.gg/u/kid">
-                            <img src="assets/guilded.png" width="30" height="30" title="Guilded" alt="Guilded">
+                            <img src="assets/guilded.png" width="30" height="30" title="Guilded" alt="Guilded" draggable="false"/>
                         </a>
                     </div>
                     <div class="lbottom">
@@ -133,11 +133,11 @@
             <!-- Other stuff do not change these -->
             <div class="tab"></div>
             <div class="topbar">
-                <img src='assets/arrow_backward.png' id="backward" height="20"/>
-                <img src='assets/arrow_forward.png' id="forward" height="20"/>
-                <img src='assets/refresh.png' id="refresh" height="20"/>
+                <img src='assets/arrow_backward.png' id="backward" height="20" draggable="false"/>
+                <img src='assets/arrow_forward.png' id="forward" height="20" draggable="false"/>
+                <img src='assets/refresh.png' id="refresh" height="20" draggable="false"/>
                 <div class="searchbar"></div>
-                <img src='assets/options.png' id="options" height="20"/>
+                <img src='assets/options.png' id="options" height="20" draggable="false"/>
             </div>
 
             <!-- The actual webpage content -->
@@ -147,25 +147,25 @@
                         <h1>What I Know</h1>
                     </div>
                     <div class="wikicons">
-                        <div class="wikicon">
+                        <div class="wikicon htmlicon">
                             <p>HTML</p>
-                            <img src="assets/html5.svg" height="40" title="HTML" alt="HTML">
+                            <img src="assets/html5.svg" height="40" title="HTML" alt="HTML" draggable="false"/>
                         </div>
-                        <div class="wikicon">
+                        <div class="wikicon cssicon">
                             <p>CSS</p>
-                            <img src="assets/css3.svg" height="40" title="CSS" alt="CSS">
+                            <img src="assets/css3.svg" height="40" title="CSS" alt="CSS" draggable="false"/>
                         </div>
-                        <div class="wikicon">
+                        <div class="wikicon jsicon">
                             <p>JavaScript</p>
-                            <img src="assets/javascript.svg" height="40" title="Javascript" alt="Javascript">
+                            <img src="assets/javascript.svg" height="40" title="Javascript" alt="Javascript" draggable="false"/>
                         </div>
-                        <div class="wikicon">
+                        <div class="wikicon pyicon">
                             <p>Python</p>
-                            <img src="assets/python.svg" height="40" title="Python" alt="Python">
+                            <img src="assets/python.svg" height="40" title="Python" alt="Python" draggable="false"/>
                         </div>
-                        <div class="wikicon">
+                        <div class="wikicon giticon">
                             <p>Git</p>
-                            <img src="assets/git.svg" height="40" title="Git" alt="Git">
+                            <img src="assets/git.svg" height="40" title="Git" alt="Git" draggable="false"/>
                         </div>
                     </div>
                 </div>
@@ -183,11 +183,11 @@
             <!-- Other stuff do not change these -->
             <div class="tab"></div>
             <div class="topbar">
-                <img src='assets/arrow_backward.png' id="backward" height="20"/>
-                <img src='assets/arrow_forward.png' id="forward" height="20"/>
-                <img src='assets/refresh.png' id="refresh" height="20"/>
+                <img src='assets/arrow_backward.png' id="backward" height="20" draggable="false"/>
+                <img src='assets/arrow_forward.png' id="forward" height="20" draggable="false"/>
+                <img src='assets/refresh.png' id="refresh" height="20" draggable="false"/>
                 <div class="searchbar"></div>
-                <img src='assets/options.png' id="options" height="20"/>
+                <img src='assets/options.png' id="options" height="20" draggable="false"/>
             </div>
 
             <!-- The actual webpage content -->
@@ -195,9 +195,9 @@
                 <h1>Sorry!</h1>
                 <h2>This website is not available for mobile</h2>
                 <div class="mobilelinks">
-                    <a href="https://github.com/erik-thorsell"><img src="assets/github.png" width="30" height="30" title="Github" alt="Github"></a>
-                    <a href="https://discordapp.com/users/441246020785930260"><img src="assets/discord.png" width="30" height="30" title="Discord" alt="Discord"/></a>
-                    <a href="https://guilded.gg/u/kid"><img src="assets/guilded.png" width="30" height="30" title="Guilded" alt="Guilded"></a>
+                    <a href="https://github.com/erik-thorsell"><img src="assets/github.png" width="30" height="30" title="Github" alt="Github" draggable="false"/></a>
+                    <a href="https://discordapp.com/users/441246020785930260"><img src="assets/discord.png" width="30" height="30" title="Discord" alt="Discord" draggable="false"/></a>
+                    <a href="https://guilded.gg/u/kid"><img src="assets/guilded.png" width="30" height="30" title="Guilded" alt="Guilded" draggable="false"/></a>
                 </div>
             </div>
         </div>

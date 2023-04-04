@@ -1,12 +1,3 @@
-//THINGS TO DO
-// - make the interior for the whatiknow window
-// - topbar (behind the tab) div.
-
-//MAYBE
-// - window animations
-
-
-
 //define variables
 zlist = ['aboutme', 'gdeskicon', 'terminalicon'];
 
@@ -41,14 +32,17 @@ window.addEventListener('load', () => {
 
 
     //initiate windows
-    toggleElement('aboutme', 'close');
-    zindex('aboutme');
-    iconfocus('aboutme');
-    document.getElementById('links').style.display = 'none';
-    document.getElementById('whatiknow').style.display = 'none';
-
-
-
+    if (window.innerWidth <= 600) {
+        document.getElementById('aboutme').style.display = 'none';
+        document.getElementById('links').style.display = 'none';
+        document.getElementById('whatiknow').style.display = 'none';
+    } else {
+      toggleElement('aboutme', 'close');
+      zindex('aboutme');
+      iconfocus('aboutme');
+      document.getElementById('links').style.display = 'none';
+      document.getElementById('whatiknow').style.display = 'none';
+    }
     
     //drag the windows
     dragElement(document.getElementById("aboutme"));
