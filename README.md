@@ -1,5 +1,6 @@
 # My portfolio website
-This is my website, yeah, if you want to find out more then you should visit it. <br>
+This is my website, made to showcase my knowledge, dedication and creativity. <br>
+Everything is custom-made; no libraries what so ever. Simply just plain HTML, CSS and JavaScript. <br>
 This website took approx. ``30`` hours to make, so I hope you enjoy it! 🙂
 
 ## Links
