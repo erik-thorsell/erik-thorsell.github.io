@@ -9,34 +9,200 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="functions.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <title>Erik Thorsell</title>
 </head>
 <body>
-    <div class="landing">
-        <div class="taskbar"></div>
-        <div class="window">
-            <div class="close"></div>
-            <div class="minimize"></div>
+    <div class="container" id="container">
+        <div class="taskbar mobilehide">
+            <div class="icons">
+                <div class="tasktitles">Links</div>
+                <img src="assets/githubdesktopicon.png" class="gdeskicon" height="70" id="gdeskicon" draggable="false"/>
+                <div class="circles gdeskcircle" id="gdeskcircle"></div>
+            </div>
+            <div class="icons">
+                <div class="tasktitles">About me</div>
+                <img src="assets/chromeicon.png" class="chromeicon" id="chromeicon" height="70" draggable="false"/>
+                <div class="circles chromecircle" id="chromecircle"></div>
+            </div>
+            <div class="icons">
+                <div class="tasktitles">What I know</div>
+                <img src="assets/terminalicon.png" class="terminalicon" height="70" id="terminalicon" draggable="false"/>
+                <div class="circles terminalcircle" id="terminalcircle"></div>
+            </div>
+        </div>
+
+
+
+        <!-- About me window -->
+        <div class="window aboutme mobilehide" id="aboutme">
+
+            <!-- Buttons at the top -->
+            <div class="close" id="closechrome"></div>
+            <div class="minimize" id="minimizechrome"></div>
             <div class="maximize"></div>
+            
+            <!-- Other stuff do not change these -->
             <div class="tab"></div>
             <div class="topbar">
-                <img src='assets/arrow_backward.png' id="backward" height="20"/>
-                <img src='assets/arrow_forward.png' id="forward" height="20"/>
-                <img src='assets/refresh.png' id="refresh" height="20"/>
+                <img src='assets/arrow_backward.png' id="backward" height="20" draggable="false"/>
+                <img src='assets/arrow_forward.png' id="forward" height="20" draggable="false"/>
+                <img src='assets/refresh.png' id="refresh" height="20" draggable="false"/>
                 <div class="searchbar"></div>
-                <img src='assets/options.png' id="options" height="20"/>
+                <img src='assets/options.png' id="options" height="20" draggable="false"/>
             </div>
-            <div class="webpage">
-                <h1>Sorry!</h1>
-                <h2>This website is under construction.</h2>
-                <div class="links">
-                    <a href="https://github.com/erik-thorsell"><img src="assets/github.png" width="30" height="30" title="Github" alt="Github"></a>
-                    <a href="https://discordapp.com/users/441246020785930260"><img src="assets/discord.png" width="30" height="30" title="Discord" alt="Discord"/></a>
-                    <a href="https://guilded.gg/u/kid"><img src="assets/guilded.png" width="30" height="30" title="Guilded" alt="Guilded"></a>
+
+            <!-- The actual webpage content -->
+            <div class="webpage aboutmepage mobilehide" id="aboutme">
+                <div class="amcontent">
+                    <h1>About me</h1>
+                    <div class="verticaldivider"></div>
+                    <div class="aminfo">
+                        <p>My name is <span class="highlightname">Erik Thorsell</span></p>
+                        <p>
+                            I am <span class="highlightage"><span id="age">NaN</span>
+                                <span class="infobox">
+                                    12/10/2007
+                                </span>
+                            </span> years old
+                        </p>
+                        <p>
+                            I live in <span class="highlightlocation">Sweden
+                                <span class="infobox">
+                                    Gothenburg
+                                </span>
+                            </span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- Links window -->
+        <div class="window links mobilehide" id="links">
+
+            <!-- Buttons at the top -->
+            <div class="close" id="closegdesk"></div>
+            <div class="minimize" id="minimizegdesk"></div>
+            <div class="maximize"></div>
+
+            <!-- Other stuff do not change these -->
+            <div class="tab"></div>
+            <div class="topbar">
+                <img src='assets/arrow_backward.png' id="backward" height="20" draggable="false"/>
+                <img src='assets/arrow_forward.png' id="forward" height="20" draggable="false"/>
+                <img src='assets/refresh.png' id="refresh" height="20" draggable="false"/>
+                <div class="searchbar"></div>
+                <img src='assets/options.png' id="options" height="20" draggable="false"/>
+            </div>
+
+            <!-- The actual webpage content -->
+            <div class="webpage linkspage" id="links">
+                <div class="lcontent">
+                    <div class="lheader">
+                        <h1>Links</h1>
+                    </div>
+                    <div class="horizontaldivider"></div>
+                    <div class="linkscenter">
+                        <a href="https://github.com/erik-thorsell">
+                            <img src="assets/github.png" width="30" height="30" title="Github" alt="Github" draggable="false">
+                        </a>
+                        <a href="https://discordapp.com/users/441246020785930260">
+                            <img src="assets/discord.png" width="30" height="30" title="Discord" alt="Discord" draggable="false"/>
+                        </a>
+                        <a href="https://guilded.gg/u/kid">
+                            <img src="assets/guilded.png" width="30" height="30" title="Guilded" alt="Guilded" draggable="false"/>
+                        </a>
+                    </div>
+                    <div class="lbottom">
+                        <p>Hey, are you looking for the source code of this website?</p>
+                        <a href="https://github.com/erik-thorsell/erik-thorsell.github.io" target="_blank">Click Here.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- What I know window -->
+        <div class="window whatiknow mobilehide" id="whatiknow">
+
+            <!-- Buttons at the top -->
+            <div class="close" id="closeterminal"></div>
+            <div class="minimize" id="minimizeterminal"></div>
+            <div class="maximize"></div>
+
+            <!-- Other stuff do not change these -->
+            <div class="tab"></div>
+            <div class="topbar">
+                <img src='assets/arrow_backward.png' id="backward" height="20" draggable="false"/>
+                <img src='assets/arrow_forward.png' id="forward" height="20" draggable="false"/>
+                <img src='assets/refresh.png' id="refresh" height="20" draggable="false"/>
+                <div class="searchbar"></div>
+                <img src='assets/options.png' id="options" height="20" draggable="false"/>
+            </div>
+
+            <!-- The actual webpage content -->
+            <div class="webpage whatiknowpage" id="whatinknow">
+                <div class="wikcontent">
+                    <div class="wikheader">
+                        <h1>What I Know</h1>
+                    </div>
+                    <div class="wikicons">
+                        <div class="wikicon htmlicon">
+                            <p>HTML</p>
+                            <img src="assets/html5.svg" height="40" title="HTML" alt="HTML" draggable="false"/>
+                        </div>
+                        <div class="wikicon cssicon">
+                            <p>CSS</p>
+                            <img src="assets/css3.svg" height="40" title="CSS" alt="CSS" draggable="false"/>
+                        </div>
+                        <div class="wikicon jsicon">
+                            <p>JavaScript</p>
+                            <img src="assets/javascript.svg" height="40" title="Javascript" alt="Javascript" draggable="false"/>
+                        </div>
+                        <div class="wikicon pyicon">
+                            <p>Python</p>
+                            <img src="assets/python.svg" height="40" title="Python" alt="Python" draggable="false"/>
+                        </div>
+                        <div class="wikicon giticon">
+                            <p>Git</p>
+                            <img src="assets/git.svg" height="40" title="Git" alt="Git" draggable="false"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile version -->
+        <div class="mobile" id="mobile">
+
+            <!-- Buttons at the top -->
+            <div class="close"></div>
+            <div class="minimize"></div>
+            <div class="maximize"></div>
+
+            <!-- Other stuff do not change these -->
+            <div class="tab"></div>
+            <div class="topbar">
+                <img src='assets/arrow_backward.png' id="backward" height="20" draggable="false"/>
+                <img src='assets/arrow_forward.png' id="forward" height="20" draggable="false"/>
+                <img src='assets/refresh.png' id="refresh" height="20" draggable="false"/>
+                <div class="searchbar"></div>
+                <img src='assets/options.png' id="options" height="20" draggable="false"/>
+            </div>
+
+            <!-- The actual webpage content -->
+            <div class="mobilewebpage">
+                <h1>Sorry!</h1>
+                <h2>This website is not available for mobile</h2>
+                <div class="mobilelinks">
+                    <a href="https://github.com/erik-thorsell"><img src="assets/github.png" width="30" height="30" title="Github" alt="Github" draggable="false"/></a>
+                    <a href="https://discordapp.com/users/441246020785930260"><img src="assets/discord.png" width="30" height="30" title="Discord" alt="Discord" draggable="false"/></a>
+                    <a href="https://guilded.gg/u/kid"><img src="assets/guilded.png" width="30" height="30" title="Guilded" alt="Guilded" draggable="false"/></a>
+                </div>
+            </div>
+        </div>
+    
+    <!-- The loader -->
     <div class="loader"></div>
 </body>
 </html>
