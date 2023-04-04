@@ -10,7 +10,8 @@ Github's domain | [erik-thorsell.github.com](https://erik-thorsell.github.com)
 ### Timeline
 ``19/03/2023`` | Project started 🎉 <br>
 ``20/03/2023`` | Website released with a "under construction" title 🚧 <br>
-... to be continued
+``04/04/2023`` | Officially released 📣 <br>
+..to be continued
 
 
 ### Contributing
