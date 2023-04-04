@@ -184,12 +184,15 @@ function toggleElement(id, type) {
     if (id == 'aboutme') {
         elementCircle = document.getElementById('chromecircle');
         elementIcon = document.getElementById('chromeicon');
+        xy = '-50%'
     } else if (id == 'whatiknow') {
         elementCircle = document.getElementById('terminalcircle');
         elementIcon = document.getElementById('terminalicon');
+        xy = '-40%'
     } else if (id == 'links') {
         elementCircle = document.getElementById('gdeskcircle');
         elementIcon = document.getElementById('gdeskicon');
+        xy = '-45%'
     }
   
     if (element.style.display == 'none') {
@@ -198,7 +201,7 @@ function toggleElement(id, type) {
         element.style.display = 'flex';
         element.style.top = '50%';
         element.style.left = '50%';
-        element.style.transform = 'translate(-50%, -50%)';
+        element.style.transform = `translate(${xy}, ${xy})`;
         elementCircle.style.top = '105%';
       } else if (closeType == 'minimize'){
         element.style.display = 'flex';
