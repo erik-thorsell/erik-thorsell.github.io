@@ -476,7 +476,8 @@ a {
     left: 50%;
     transform: translateX(-50%);
     z-index: 99998;
-    width: fit-content;
+    width: auto;
+    white-space: nowrap;
     padding: 10px;
     line-height: 0;
     border-radius: 6px;
@@ -486,7 +487,8 @@ a {
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 .highlightlocation:hover .infobox,
-.highlightage:hover .infobox {
+.highlightage:hover .infobox,
+.highlightname:hover .infobox {
     opacity: 1;
     visibility: visible;
 }
