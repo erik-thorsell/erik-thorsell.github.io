@@ -89,6 +89,8 @@ a {
 }
 .mobilewebpage h2 {
     font-size: 100%;
+    line-height: normal;
+    text-align: center;
 }
 .mobilelinks {
     position: absolute;
