@@ -21,4 +21,4 @@ Feel free to open an issue with feedback!
 
 
 ### License
-This code is under **GNU GENERAL PUBLIC LICENSE**. Check LICENSE.md for more information.
+This code is under the **MIT** license. Check LICENSE.md for more information.
