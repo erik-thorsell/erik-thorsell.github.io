@@ -188,11 +188,11 @@ function toggleElement(id, type) {
     } else if (id == 'whatiknow') {
         elementCircle = document.getElementById('terminalcircle');
         elementIcon = document.getElementById('terminalicon');
-        xy = '-40%'
+        xy = '-45%'
     } else if (id == 'links') {
         elementCircle = document.getElementById('gdeskcircle');
         elementIcon = document.getElementById('gdeskicon');
-        xy = '-45%'
+        xy = '-55%'
     }
   
     if (element.style.display == 'none') {
