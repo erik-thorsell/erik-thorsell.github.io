@@ -180,12 +180,23 @@
 
         <!-- Mobile version -->
         <div class="mobile" id="mobile">
-            <p class="greeter" id="greeter">
-                Hey!
-            </p>
+            <nav id="nav">
+                <p class="navtitle" id="navtitle">
+                    <span id="p1">I'm</span>
+                    <span id="p2">Erik Thorsell</span>
+                    <span id="p3">.</span>
+                </p>
+                <div class="hamburgermenu">
+                    <span class="hamburgerline"></span>
+                    <span class="hamburgerline"></span>
+                    <span class="hamburgerline"></span>
+                </div>
+                <span class="navdivider" id="navdivider"></span>
+            </nav>
+            <p class="greeter" id="greeter"></p>
             <div id="cookiebuttons">
-                <button class="cbutton">I do</button>
-                <button class="cbutton">I don't</button>
+                <button class="cbutton" onclick=cookieChoice(true)>I do</button>
+                <button class="cbutton" onclick=cookieChoice(false)>I don't</button>
             </div>
         </div>
     

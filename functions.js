@@ -278,7 +278,12 @@ document.addEventListener("DOMContentLoaded", function() {
         elementsToHide[i].style.display = "none";
       }
       document.getElementById('mobile').style.display = 'flex';
-      greeter();
+      if (document.cookie != 'introSkip=true') {
+        console.log(document.cookie)
+        greeter();
+      } else {
+        websiteLoader();
+      }
   }
 });
 
@@ -287,15 +292,20 @@ document.addEventListener("DOMContentLoaded", function() {
 function greetMessage(element, message, timeout = NaN) {
   element.style.opacity = '0';
   element.style.display = 'flex';
-  element.innerHTML = message;
+  if (message != false) {
+    element.innerHTML = message;
+  }
   setTimeout(function(){
     element.style.opacity = '1';
   }, 1000);
-  setTimeout(function(){
-    element.style.opacity = '0';
-  }, timeout);
+  if (timeout != NaN) {
+    setTimeout(function(){
+      element.style.opacity = '0';
+    }, timeout);
+}
 }
 
+//greets the user when using the website for the first time
 function greeter() {
   const greeterheader = document.getElementById('greeter')
   greetMessage(greeterheader, 'Hey!', 2000);
@@ -320,4 +330,65 @@ function greeter() {
     }, 500);
     
   }, 21500);
+}
+
+
+//website loader
+function websiteLoader() {
+  document.getElementById('greeter').style.opacity = '0';
+  document.getElementById('cookiebuttons').style.opacity = '0';
+  setTimeout(function(){
+    const navtitle = document.getElementById('navtitle');
+    const p1 = document.getElementById('p1');
+    const p3 = document.getElementById('p3');
+    document.getElementById('greeter').style.display = 'none';
+    document.getElementById('cookiebuttons').style.display = 'none';
+
+    //navtitle animation
+    document.getElementById('nav').style.display = 'flex';
+    greetMessage(navtitle, false);
+    setTimeout(function(){
+      //removes the "I'm"
+      p1.style.transform = 'translateX(-25px)';
+      p1.style.opacity = '0';
+      setTimeout(function(){
+        //removes the period
+        p3.style.transform = 'translateX(25px)';
+        p3.style.opacity = '0';
+      }, 300);
+      setTimeout(function(){
+        //centers the text
+        navtitle.style.marginRight = '45px';
+        setTimeout(function(){
+          //shrinks the navbar so that the text is at the top
+          document.getElementById('nav').style.height = '10%';
+          setTimeout(function(){
+            //animates and creates the divider
+            document.getElementById('navdivider').style.width = '100%';
+            //animates and creates the hamburger menu
+            const hamburgerlines = document.querySelectorAll('.hamburgerline');
+            for (let i = 0; i < hamburgerlines.length; i++) {
+              setTimeout(function(){
+                hamburgerlines[i].style.transform = 'translateY(-10px)';
+                setTimeout(function(){
+                  hamburgerlines[i].style.opacity = '1';
+                  hamburgerlines[i].style.transform = 'translateY(0px)';
+                }, 200);
+              }, 100 * i);
+            }
+          }, 300);
+        }, 600);
+      }, 500);
+    }, 1500);
+
+  }, 500);
+}
+
+
+//runs when the user accepts or declines the use of cookies
+function cookieChoice(choice){
+  if (choice == true){
+    document.cookie = "introSkip = true";
+  }
+  websiteLoader();
 }

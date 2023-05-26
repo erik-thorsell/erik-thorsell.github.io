@@ -641,3 +641,66 @@ a {
     margin: 0 1.5em;
     transition: all .4s ease-in-out;
 }
+
+
+
+/*the navbar*/
+nav {
+    display: none;
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease-in-out;
+    flex-direction: column;
+    line-height: 0;
+}
+
+/* the text in the middle of the navbar. my name. */
+.navtitle {
+    display: none;
+    color: #f5f5f5;
+    font-size: 2em;
+    transition: all .4s ease-in-out;
+    overflow-wrap: normal;
+    text-align: center;
+    margin-right: 0px;
+    padding: 0;
+}
+#p1 {
+    margin-right: 10px;
+}
+#p1, #p2, #p3 {
+    transition: all .4s ease-in-out;
+}
+
+/* just the divider. acts as the bottom border. */
+.navdivider {
+    display: flex;
+    background-color: #3c3c3c;
+    height: 2px !important;
+    width: 0%;
+    transition: all .4s ease-in-out;
+}
+
+/* navbar hamburgermenu */
+.hamburgermenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 5%;
+}
+/* each line for the icon */
+.hamburgerline {
+    opacity: 0;
+    background-color: #f5f5f59f;
+    height: 3px;
+    width: 100%;
+    margin: 2px 0px;
+    transition: all .4s ease-in-out;
+}
