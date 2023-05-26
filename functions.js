@@ -33,10 +33,10 @@ window.addEventListener('load', () => {
 
     //initiate windows
     if (window.innerWidth <= 600) {
-        document.getElementById('aboutme').style.display = 'none';
-        document.getElementById('links').style.display = 'none';
-        document.getElementById('whatiknow').style.display = 'none';
-    } else {
+        //hide everything
+        //document.getElementById('mobilehide').style.display = 'none';
+        document.querySelectorAll('.mobilehide').forEach(e => e.style.display = 'none');
+      } else {
       toggleElement('aboutme', 'close');
       zindex('aboutme');
       iconfocus('aboutme');
@@ -129,17 +129,7 @@ function calculateAge(birthMonth, birthDay, birthYear) {
 
 
 
-// check if mobile
-document.addEventListener("DOMContentLoaded", function() {
-    if (window.innerWidth <= 600) {
-        const elementsToHide = document.querySelectorAll(".mobilehide");
-        for (let i = 0; i < elementsToHide.length; i++) {
-          elementsToHide[i].style.display = "none";
-        }
-      document.getElementById('mobile').style.display = 'flex';
-    }
-  });
-  
+
 
 
 
@@ -272,4 +262,62 @@ function iconfocus(element) {
       gDeskIcon.style.marginTop = '0px';
       break;
 }
+}
+
+
+
+
+
+// mobile
+
+// check if mobile
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.innerWidth <= 600) {
+      const elementsToHide = document.querySelectorAll(".mobilehide");
+      for (let i = 0; i < elementsToHide.length; i++) {
+        elementsToHide[i].style.display = "none";
+      }
+      document.getElementById('mobile').style.display = 'flex';
+      greeter();
+  }
+});
+
+
+//messages
+function greetMessage(element, message, timeout = NaN) {
+  element.style.opacity = '0';
+  element.style.display = 'flex';
+  element.innerHTML = message;
+  setTimeout(function(){
+    element.style.opacity = '1';
+  }, 1000);
+  setTimeout(function(){
+    element.style.opacity = '0';
+  }, timeout);
+}
+
+function greeter() {
+  const greeterheader = document.getElementById('greeter')
+  greetMessage(greeterheader, 'Hey!', 2000);
+  setTimeout(function(){
+    greetMessage(greeterheader, 'I\'m Erik Thorsell.', 2500);
+  }, 2750);
+  setTimeout(function(){
+    greetMessage(greeterheader, 'You\'ll get to know as much as you\'d like about me in just a bit.', 6000);
+  }, 5750);
+  setTimeout(function(){
+    greetMessage(greeterheader, 'But first, this website uses cookies to ensure that you\'ll never have to see this introduction again.', 7500);
+  }, 12500);
+  setTimeout(function(){
+    greeterheader.innerHTML = 'Do you accept?';
+    greeterheader.style.opacity = '1';
+    document.getElementById('cookiebuttons').style.display = 'flex';
+    setTimeout(function(){
+      const cookiebuttons = document.querySelectorAll('.cbutton');
+      for (let i = 0; i < cookiebuttons.length; i++) {
+        cookiebuttons[i].style.opacity = '1';
+      }
+    }, 500);
+    
+  }, 21500);
 }
