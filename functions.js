@@ -392,3 +392,21 @@ function cookieChoice(choice){
   }
   websiteLoader();
 }
+
+//eventlistener click hamburger menu
+document.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('hamburgermenu').addEventListener('click', function(){
+    const hamburgerlines = document.querySelectorAll('.hamburgerline');
+    if(hamburgerlines[1].style.opacity == '1'){
+      hamburgerlines[0].style.transform = 'translateY(12px) rotate(-45deg)';
+      hamburgerlines[1].style.opacity = '0';
+      hamburgerlines[1].style.transform = 'translateX(-20px)';
+      hamburgerlines[2].style.transform = 'translateY(-11px) rotate(45deg)';
+    } else {
+      hamburgerlines[0].style.transform = 'translateY(0px) rotate(0deg)';
+      hamburgerlines[1].style.opacity = '1';
+      hamburgerlines[1].style.transform = 'translateX(0px)';
+      hamburgerlines[2].style.transform = 'translateY(0px) rotate(0deg)';
+    }
+  });
+});
