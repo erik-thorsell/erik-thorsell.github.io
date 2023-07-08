@@ -278,12 +278,7 @@ document.addEventListener("DOMContentLoaded", function() {
         elementsToHide[i].style.display = "none";
       }
       document.getElementById('mobile').style.display = 'flex';
-      if (document.cookie != 'introSkip=true') {
-        console.log(document.cookie)
-        greeter();
-      } else {
-        websiteLoader();
-      }
+      websiteLoader();
   }
 });
 
@@ -303,33 +298,6 @@ function greetMessage(element, message, timeout = NaN) {
       element.style.opacity = '0';
     }, timeout);
 }
-}
-
-//greets the user when using the website for the first time
-function greeter() {
-  const greeterheader = document.getElementById('greeter')
-  greetMessage(greeterheader, 'Hey!', 2000);
-  setTimeout(function(){
-    greetMessage(greeterheader, 'I\'m Erik Thorsell.', 2500);
-  }, 2750);
-  setTimeout(function(){
-    greetMessage(greeterheader, 'You\'ll get to know as much as you\'d like about me in just a bit.', 6000);
-  }, 5750);
-  setTimeout(function(){
-    greetMessage(greeterheader, 'But first, this website uses cookies to ensure that you\'ll never have to see this introduction again.', 7500);
-  }, 12500);
-  setTimeout(function(){
-    greeterheader.innerHTML = 'Do you accept?';
-    greeterheader.style.opacity = '1';
-    document.getElementById('cookiebuttons').style.display = 'flex';
-    setTimeout(function(){
-      const cookiebuttons = document.querySelectorAll('.cbutton');
-      for (let i = 0; i < cookiebuttons.length; i++) {
-        cookiebuttons[i].style.opacity = '1';
-      }
-    }, 500);
-    
-  }, 21500);
 }
 
 
@@ -385,28 +353,45 @@ function websiteLoader() {
 }
 
 
-//runs when the user accepts or declines the use of cookies
-function cookieChoice(choice){
-  if (choice == true){
-    document.cookie = "introSkip = true";
-  }
-  websiteLoader();
-}
-
 //eventlistener click hamburger menu
 document.addEventListener('DOMContentLoaded', function(){
+  //on click hamburger menu
   document.getElementById('hamburgermenu').addEventListener('click', function(){
     const hamburgerlines = document.querySelectorAll('.hamburgerline');
-    if(hamburgerlines[1].style.opacity == '1'){
+    const navdivider = document.getElementById('navdivider');
+    const themenu = document.getElementById('themenu');
+    const itemlinks = document.querySelectorAll('.itemlink');
+    const underlines = document.querySelectorAll('.underline');
+    if(hamburgerlines[1].style.opacity == '1'){ //if the menu is closed
       hamburgerlines[0].style.transform = 'translateY(12px) rotate(-45deg)';
       hamburgerlines[1].style.opacity = '0';
       hamburgerlines[1].style.transform = 'translateX(-20px)';
       hamburgerlines[2].style.transform = 'translateY(-11px) rotate(45deg)';
-    } else {
+      themenu.style.display = 'flex';
+      themenu.style.opacity = '1';
+      setTimeout(function(){
+        for (let i = 0; i < itemlinks.length; i++) {
+          setTimeout(function(){
+            itemlinks[i].style.opacity = '1';
+            underlines[i].style.width = '90%';
+          }, 100 * i);
+        }
+      }, 400);
+    } else { //if the menu is opened
       hamburgerlines[0].style.transform = 'translateY(0px) rotate(0deg)';
       hamburgerlines[1].style.opacity = '1';
       hamburgerlines[1].style.transform = 'translateX(0px)';
       hamburgerlines[2].style.transform = 'translateY(0px) rotate(0deg)';
+      themenu.style.opacity = '0';
+      setTimeout(function(){
+        themenu.style.display = 'none';
+      }
+      , 300);
+      // do the same thing as above but in reverse
+      for (let i = 0; i < itemlinks.length; i++) {
+        itemlinks[i].style.opacity = '0';
+        underlines[i].style.width = '0%';
+      }
     }
   });
 });

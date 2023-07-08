@@ -32,6 +32,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-decoration: none;
 }
 a {
     color: inherit;
@@ -656,6 +657,8 @@ nav {
     transition: all .5s ease-in-out;
     flex-direction: column;
     line-height: 0;
+    background-color: var(--amp-bg-color);
+    z-index: 1000;
 }
 
 /* the text in the middle of the navbar. my name. */
@@ -703,4 +706,45 @@ nav {
     width: 100%;
     margin: 2px 0px;
     transition: all .4s ease-in-out;
+}
+
+/*the hamburger menu*/
+.themenu {
+    display: none;
+    flex-direction: column;
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+    background-color: var(--amp-bg-color-darker);
+}
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0%;
+    transform: translateX(-50%);
+    background-color: #f5f5f5;
+    transition: all .4s ease-in-out;
+}
+
+.itemlink {
+    opacity: 0;
+    position: relative; /* Add a relative position to the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f5;
+    font-size: 2em;
+    transition: all .4s ease-in-out;
+    overflow-wrap: normal;
+    text-align: center;
+    margin: 10px;
+    padding: 0;
+    text-decoration: none;
 }
