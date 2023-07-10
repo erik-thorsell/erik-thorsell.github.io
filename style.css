@@ -27,7 +27,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
-    overflow: hidden;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -260,6 +259,7 @@ a {
 
 /*Applies to all windows*/
 .window {
+    overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -606,6 +606,26 @@ a {
 
 /* mobile */
 
+
+/* animations */
+/* go up and down */
+@keyframes updown {
+    0% {
+        transform: translateY(0px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(90deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(90deg);
+    }
+}
+
+
+
+
+
+
 .mobile {
     background-color: var(--amp-bg-color);
     display: none;
@@ -614,32 +634,6 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: all .4s ease-in-out;
-}
-
-.greeter {
-    display: none;
-    color: #f5f5f5;
-    font-size: 2em;
-    transition: all .4s ease-in-out;
-    overflow-wrap: normal;
-    text-align: center;
-    margin: 10%;
-    padding: 0;
-}
-#cookiebuttons{
-    display: none;
-}
-.cbutton{
-    font-family: inherit;
-    font-size: 1em;
-    border-radius: 10%;
-    border: 2px solid var(--amp-dot-color);
-    color: #272727;
-    opacity: 0;
-    height: 2.5em;
-    width: 4em;
-    margin: 0 1.5em;
     transition: all .4s ease-in-out;
 }
 
@@ -658,7 +652,7 @@ nav {
     flex-direction: column;
     line-height: 0;
     background-color: var(--amp-bg-color);
-    z-index: 1000;
+    z-index: 1001;
 }
 
 /* the text in the middle of the navbar. my name. */
@@ -677,6 +671,9 @@ nav {
 }
 #p1, #p2, #p3 {
     transition: all .4s ease-in-out;
+}
+#p2 {
+    text-decoration: none;
 }
 
 /* just the divider. acts as the bottom border. */
@@ -721,7 +718,9 @@ nav {
     justify-content: center;
     transition: all .3s ease-in-out;
     background-color: var(--amp-bg-color-darker);
+    z-index: 1000;
 }
+/* the underline for the menu items, has to be a separate element cause animation yes */
 .underline {
     position: absolute;
     bottom: 0;
@@ -732,7 +731,7 @@ nav {
     background-color: #f5f5f5;
     transition: all .4s ease-in-out;
 }
-
+/* the menu items */
 .itemlink {
     opacity: 0;
     position: relative; /* Add a relative position to the container */
@@ -744,7 +743,54 @@ nav {
     transition: all .4s ease-in-out;
     overflow-wrap: normal;
     text-align: center;
-    margin: 10px;
+    margin: 5%;
     padding: 0;
+    text-decoration: none;
+}
+/* the link to the source code */
+.sourcecode {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 10%;
+    color: var(--amp-dot-color);
+    font-size: .75em;
+    line-height: 50%;
+    transition: all .4s ease-in-out;
+    justify-content: center;
+    align-items: center;
+}
+
+/* the landing page */
+.mobilelanding{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300%;
+    width: 100%;
+    overflow: scroll;
+    color: #f5f5f5;
+    z-index: 1;
+    transition: all .4s ease-in-out;
+}
+/* the first content that the user sees */
+.mobilelandingcontent {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transition: all .4s ease-in-out;
+}
+/* the arrow at the bottom of the landing page. ascii character */
+.arrow {
+    position: absolute;
+    bottom: 2.5%;
+    font-size: 1.5em;
+    animation: updown 3s infinite;
     text-decoration: none;
 }

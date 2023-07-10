@@ -303,14 +303,11 @@ function greetMessage(element, message, timeout = NaN) {
 
 //website loader
 function websiteLoader() {
-  document.getElementById('greeter').style.opacity = '0';
-  document.getElementById('cookiebuttons').style.opacity = '0';
   setTimeout(function(){
     const navtitle = document.getElementById('navtitle');
     const p1 = document.getElementById('p1');
     const p3 = document.getElementById('p3');
-    document.getElementById('greeter').style.display = 'none';
-    document.getElementById('cookiebuttons').style.display = 'none';
+    const landing = document.getElementById('mobilelandingcontent');
 
     //navtitle animation
     document.getElementById('nav').style.display = 'flex';
@@ -333,6 +330,7 @@ function websiteLoader() {
           setTimeout(function(){
             //animates and creates the divider
             document.getElementById('navdivider').style.width = '100%';
+            landing.style.opacity = '1';
             //animates and creates the hamburger menu
             const hamburgerlines = document.querySelectorAll('.hamburgerline');
             for (let i = 0; i < hamburgerlines.length; i++) {
@@ -355,27 +353,39 @@ function websiteLoader() {
 
 //eventlistener click hamburger menu
 document.addEventListener('DOMContentLoaded', function(){
+  //correct age
+  const age = calculateAge(12, 10, 2007);
+  var text = document.getElementById('mobileage').innerText;
+  text = text.replace('NaN', age);
+  document.getElementById('mobileage').innerText = text;
+
   //on click hamburger menu
   document.getElementById('hamburgermenu').addEventListener('click', function(){
     const hamburgerlines = document.querySelectorAll('.hamburgerline');
-    const navdivider = document.getElementById('navdivider');
+    const landingpage = document.getElementById('mobilelanding');
     const themenu = document.getElementById('themenu');
     const itemlinks = document.querySelectorAll('.itemlink');
+    const sourcecode = document.getElementById('sourcecode');
     const underlines = document.querySelectorAll('.underline');
     if(hamburgerlines[1].style.opacity == '1'){ //if the menu is closed
       hamburgerlines[0].style.transform = 'translateY(12px) rotate(-45deg)';
       hamburgerlines[1].style.opacity = '0';
       hamburgerlines[1].style.transform = 'translateX(-20px)';
       hamburgerlines[2].style.transform = 'translateY(-11px) rotate(45deg)';
-      themenu.style.display = 'flex';
-      themenu.style.opacity = '1';
+      landingpage.style.opacity = '0';
       setTimeout(function(){
-        for (let i = 0; i < itemlinks.length; i++) {
-          setTimeout(function(){
-            itemlinks[i].style.opacity = '1';
-            underlines[i].style.width = '90%';
-          }, 100 * i);
-        }
+        landingpage.style.display = 'none';
+        themenu.style.display = 'flex';
+        themenu.style.opacity = '1';
+        setTimeout(function(){
+          for (let i = 0; i < itemlinks.length; i++) {
+            setTimeout(function(){
+              itemlinks[i].style.opacity = '1';
+              underlines[i].style.width = '90%';
+            }, 100 * i);
+          }
+          sourcecode.style.opacity = '1';
+        }, 400);
       }, 400);
     } else { //if the menu is opened
       hamburgerlines[0].style.transform = 'translateY(0px) rotate(0deg)';
@@ -392,6 +402,13 @@ document.addEventListener('DOMContentLoaded', function(){
         itemlinks[i].style.opacity = '0';
         underlines[i].style.width = '0%';
       }
+      sourcecode.style.opacity = '0';
+      setTimeout(function(){
+        landingpage.style.display = 'flex';
+        setTimeout(function(){
+          landingpage.style.opacity = '1';
+        }, 400);
+      }, 300);
     }
   });
 });
