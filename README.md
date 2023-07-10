@@ -21,4 +21,4 @@ Feel free to open an issue with feedback!
 
 
 ### License
-This code is under the **MIT** license. Check LICENSE.md for more information.
+This code is under the **MIT** license. Check [LICENSE](https://github.com/erik-thorsell/erik-thorsell.github.io/blob/main/LICENSE) for more information.
