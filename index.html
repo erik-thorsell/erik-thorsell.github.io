@@ -13,7 +13,7 @@
     <title>Erik Thorsell</title>
 </head>
 <body>
-    <div class="container" id="container">
+    <div class="container mobilehide" id="container">
         <div class="taskbar mobilehide">
             <div class="icons">
                 <div class="tasktitles">Links</div>
@@ -177,6 +177,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
         <!-- Mobile version -->
         <div class="mobile" id="mobile">
@@ -194,18 +195,18 @@
                 <span class="navdivider" id="navdivider"></span>
             </nav>
             <div class="themenu" id="themenu">
-                    <a href="#about" class="itemlink" id="itemlink">
+                    <p class="itemlink" id="itemlink">
                         About
                         <span class="underline" id="underline"></span>
-                    </a>
-                    <a href="#links" class="itemlink" id="itemlink">
+                    </p>
+                    <p class="itemlink" id="itemlink">
                         Links
                         <span class="underline" id="underline"></span>
-                    </a>
-                    <a href="#whatiknow" class="itemlink" id="itemlink">
+                    </p>
+                    <p class="itemlink" destination="#mobilewhatiknow">
                         What I know
                         <span class="underline" id="underline"></span>
-                    </a>
+                    </p>
                     <a href="mailto:contact@erikthorsell.com" class="itemlink" id="itemlink">
                         Contact
                         <span class="underline" id="underline"></span>
@@ -216,16 +217,19 @@
                         
                     </div>
                 </div>
-            <div class="mobilelanding" id="mobilelanding">
+            <div class="mobilelanding menuhide" id="mobilelanding">
                 <div class="mobilelandingcontent" id="mobilelandingcontent">
                     <h1>I'm Erik Thorsell</h1>
                     <p id="mobileage">I'm a NaN year old developer from Sweden.</p>
                     <a href="#about" class="mobilelandingbutton">Learn more</a>
-                    <a href="#about" class="arrow" id="arrow">></a>
+                    <a href="#mobilewhatiknow" class="arrow" id="arrow">></a>
                 </div>
             </div>
+            <div class="mobilewhatiknow menuhide" id="mobilewhatiknow">
+                <h1>What I Know</h1>
+                <p>hey mooshrum</p>
+            </div>
         </div>
-    
     <!-- The loader -->
     <div class="loader"></div>
 </body>

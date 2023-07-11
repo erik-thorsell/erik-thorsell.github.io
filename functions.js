@@ -362,53 +362,103 @@ document.addEventListener('DOMContentLoaded', function(){
   //on click hamburger menu
   document.getElementById('hamburgermenu').addEventListener('click', function(){
     const hamburgerlines = document.querySelectorAll('.hamburgerline');
-    const landingpage = document.getElementById('mobilelanding');
-    const themenu = document.getElementById('themenu');
-    const itemlinks = document.querySelectorAll('.itemlink');
-    const sourcecode = document.getElementById('sourcecode');
-    const underlines = document.querySelectorAll('.underline');
     if(hamburgerlines[1].style.opacity == '1'){ //if the menu is closed
-      hamburgerlines[0].style.transform = 'translateY(12px) rotate(-45deg)';
-      hamburgerlines[1].style.opacity = '0';
-      hamburgerlines[1].style.transform = 'translateX(-20px)';
-      hamburgerlines[2].style.transform = 'translateY(-11px) rotate(45deg)';
-      landingpage.style.opacity = '0';
-      setTimeout(function(){
-        landingpage.style.display = 'none';
-        themenu.style.display = 'flex';
-        themenu.style.opacity = '1';
-        setTimeout(function(){
-          for (let i = 0; i < itemlinks.length; i++) {
-            setTimeout(function(){
-              itemlinks[i].style.opacity = '1';
-              underlines[i].style.width = '90%';
-            }, 100 * i);
-          }
-          sourcecode.style.opacity = '1';
-        }, 400);
-      }, 400);
+      openMenu();
     } else { //if the menu is opened
-      hamburgerlines[0].style.transform = 'translateY(0px) rotate(0deg)';
-      hamburgerlines[1].style.opacity = '1';
-      hamburgerlines[1].style.transform = 'translateX(0px)';
-      hamburgerlines[2].style.transform = 'translateY(0px) rotate(0deg)';
-      themenu.style.opacity = '0';
-      setTimeout(function(){
-        themenu.style.display = 'none';
+      closeMenu();
+}});
+})
+
+function openMenu() {
+  const hamburgerlines = document.querySelectorAll('.hamburgerline');
+  const menuhides = document.querySelectorAll('.menuhide');
+  const themenu = document.getElementById('themenu');
+  const itemlinks = document.querySelectorAll('.itemlink');
+  const sourcecode = document.getElementById('sourcecode');
+  const underlines = document.querySelectorAll('.underline');
+  if(hamburgerlines[1].style.opacity == '1'){ //if the menu is closed
+    hamburgerlines[0].style.transform = 'translateY(12px) rotate(-45deg)';
+    hamburgerlines[1].style.opacity = '0';
+    hamburgerlines[1].style.transform = 'translateX(-20px)';
+    hamburgerlines[2].style.transform = 'translateY(-11px) rotate(45deg)';
+    for (let i = 0; i < menuhides.length; i++) {
+      menuhides[i].style.opacity = 0;
+    }
+    setTimeout(function(){
+      for (let i = 0; i < menuhides.length; i++) {
+        menuhides[i].style.display = 'none';
       }
-      , 300);
-      // do the same thing as above but in reverse
-      for (let i = 0; i < itemlinks.length; i++) {
-        itemlinks[i].style.opacity = '0';
-        underlines[i].style.width = '0%';
-      }
-      sourcecode.style.opacity = '0';
+    }, 400);
+    setTimeout(function(){
+      themenu.style.display = 'flex';
+      themenu.style.opacity = '1';
       setTimeout(function(){
-        landingpage.style.display = 'flex';
-        setTimeout(function(){
-          landingpage.style.opacity = '1';
-        }, 400);
-      }, 300);
+        for (let i = 0; i < itemlinks.length; i++) {
+          setTimeout(function(){
+            itemlinks[i].style.opacity = '1';
+            underlines[i].style.width = '90%';
+          }, 100 * i);
+        }
+        sourcecode.style.opacity = '1';
+      }, 400);
+    }, 400);
+  }
+}
+
+function closeMenu() {
+  const hamburgerlines = document.querySelectorAll('.hamburgerline');
+  const menuhides = document.querySelectorAll('.menuhide');
+  const themenu = document.getElementById('themenu');
+  const itemlinks = document.querySelectorAll('.itemlink');
+  const sourcecode = document.getElementById('sourcecode');
+  const underlines = document.querySelectorAll('.underline');
+  hamburgerlines[0].style.transform = 'translateY(0px) rotate(0deg)';
+  hamburgerlines[1].style.opacity = '1';
+  hamburgerlines[1].style.transform = 'translateX(0px)';
+  hamburgerlines[2].style.transform = 'translateY(0px) rotate(0deg)';
+  themenu.style.opacity = '0';
+  setTimeout(function(){
+    themenu.style.display = 'none';
+  }
+  , 300);
+  // do the same thing as above but in reverse
+  for (let i = 0; i < itemlinks.length; i++) {
+    itemlinks[i].style.opacity = '0';
+    underlines[i].style.width = '0%';
+  }
+  sourcecode.style.opacity = '0';
+  for (let i = 0; i < menuhides.length; i++){menuhides[i].style.display = 'flex';}
+  setTimeout(function(){
+    for (let i = 0; i < menuhides.length; i++) {
+      setTimeout(function(){
+        menuhides[i].style.opacity = '1';
+      }, 100 * i);
+    }
+  }, 300);
+}
+
+//all of the links in the menu
+document.addEventListener('DOMContentLoaded', function(){
+  const itemlinks = document.querySelectorAll('.itemlink');
+  for (let i = 0; i < itemlinks.length; i++) {
+    itemlinks[i].addEventListener('click', function(){
+      closeMenu();
+      setTimeout(function(){
+        window.location.href = itemlinks[i].getAttribute('destination');
+      }, 600);
+    });
+  }
+});
+
+
+//if the user is at the top of the page, the arrow is visible, otherwise it is hidden
+document.addEventListener('DOMContentLoaded', function(){
+  const arrow = document.getElementById('arrow');
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 0) {
+      arrow.style.opacity = '0';
+    } else {
+      arrow.style.opacity = '1';
     }
   });
 });
