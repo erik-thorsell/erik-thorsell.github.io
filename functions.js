@@ -1,6 +1,13 @@
 //define variables
 zlist = ['aboutme', 'gdeskicon', 'terminalicon'];
-
+colors = {
+  'html': 'invert(46%) sepia(34%) saturate(1814%) hue-rotate(340deg) brightness(97%) contrast(94%)',
+  'css': 'invert(61%) sepia(25%) saturate(1351%) hue-rotate(156deg) brightness(90%) contrast(94%)',
+  'js': 'invert(80%) sepia(88%) saturate(424%) hue-rotate(342deg) brightness(101%) contrast(95%)',
+  'python': 'invert(39%) sepia(28%) saturate(1037%) hue-rotate(164deg) brightness(99%) contrast(89%)',
+  'git': 'invert(38%) sepia(92%) saturate(2257%) hue-rotate(343deg) brightness(101%) contrast(91%)',
+  'sql': 'invert(79%) sepia(4%) saturate(5862%) hue-rotate(170deg) brightness(95%) contrast(96%)'
+}
 
 
 window.addEventListener('load', () => {
@@ -461,4 +468,21 @@ document.addEventListener('DOMContentLoaded', function(){
       arrow.style.opacity = '1';
     }
   });
+});
+
+//if the user clicks the card, it gets vibrant with colors
+document.addEventListener('DOMContentLoaded', function(){
+  const cards = document.querySelectorAll('.card');
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', function(){
+      cards[i].style.transform = 'scale(1.05)';
+      setTimeout(function(){
+        attribute = cards[i].getAttribute('type');
+        cards[i].style.filter = colors[attribute];
+        setTimeout(function(){
+          cards[i].style.transform = 'scale(1)';
+        }, 400);
+      }, 200);
+    });
+  }
 });
