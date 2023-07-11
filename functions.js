@@ -362,9 +362,12 @@ function websiteLoader() {
 document.addEventListener('DOMContentLoaded', function(){
   //correct age
   const age = calculateAge(12, 10, 2007);
-  var text = document.getElementById('mobileage').innerText;
-  text = text.replace('NaN', age);
-  document.getElementById('mobileage').innerText = text;
+  elements = document.querySelectorAll('.agereplace');
+  for (let i = 0; i < elements.length; i++) {
+    var text = elements[i].innerText;
+    text = text.replace('NaN', age);
+    elements[i].innerText = text;
+  }
 
   //on click hamburger menu
   document.getElementById('hamburgermenu').addEventListener('click', function(){
