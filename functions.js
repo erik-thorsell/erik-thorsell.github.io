@@ -450,11 +450,21 @@ function closeMenu() {
 //all of the links in the menu
 document.addEventListener('DOMContentLoaded', function(){
   const itemlinks = document.querySelectorAll('.itemlink');
+  const card = document.querySelector('.mobileaboutprojects');
   for (let i = 0; i < itemlinks.length; i++) {
     itemlinks[i].addEventListener('click', function(){
+      const attribute = itemlinks[i].getAttribute('destination');
       closeMenu();
       setTimeout(function(){
-        window.location.href = itemlinks[i].getAttribute('destination');
+        if (attribute == '#arrow') {
+          const secattribute = itemlinks[i].getAttribute('secdestination');
+          if (secattribute == 'aboutme') {
+            card.classList.remove('is-flipped');
+          } else if (secattribute == 'projects') {
+            card.classList.add('is-flipped');
+          }
+        }
+        window.location.href = attribute;
       }, 600);
     });
   }
@@ -471,6 +481,22 @@ document.addEventListener('DOMContentLoaded', function(){
       arrow.style.opacity = '1';
     }
   });
+});
+
+//aboutme-projects cards click
+document.addEventListener('DOMContentLoaded', function(){
+  const card = document.querySelector('.mobileaboutprojects');
+  const cardlinks = document.querySelectorAll('.projectcard');
+
+  card.addEventListener('click', function () {
+    card.classList.toggle('is-flipped');
+  });
+  for (let i = 0; i < cardlinks.length; i++) {
+    cardlinks[i].addEventListener('click', function () {
+      window.open(cardlinks[i].getAttribute('destination'), '_blank');
+      card.classList.toggle('is-flipped');
+    });
+  }
 });
 
 //if the user clicks the card, it gets vibrant with colors
