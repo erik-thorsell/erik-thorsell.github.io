@@ -52,9 +52,6 @@ a {
 
 
 
-
-
-
 .pyyellow {
     color: #ffd343;
 }
@@ -983,7 +980,7 @@ nav {
     justify-content: center;
     position: relative;
 }
-.links {
+.mobilelinkscontent {
     width: 75%;
     display: flex;
     flex-direction: row;

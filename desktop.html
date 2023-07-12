@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<body lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="overflow.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="desktopfunctions.js"></script>
     <script src="functions.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <title>Erik Thorsell</title>
 </head>
 <body>
+    <!-- Desktop version -->
     <div class="container mobilehide" id="container">
         <div class="taskbar mobilehide">
             <div class="icons">
@@ -32,7 +35,7 @@
             </div>
         </div>
 
- 
+
 
         <!-- About me window -->
         <div class="window aboutme mobilehide" id="aboutme">
@@ -178,124 +181,6 @@
             </div>
         </div>
     </div>
-
-        <!-- Mobile version -->
-        <div class="mobile" id="mobile">
-            <nav id="nav">
-                <p class="navtitle" id="navtitle">
-                    <span id="p1">I'm</span>
-                    <a href="#" id="p2">Erik Thorsell</a>
-                    <span id="p3">.</span>
-                </p>
-                <div class="hamburgermenu" id="hamburgermenu">
-                    <span class="hamburgerline"></span>
-                    <span class="hamburgerline"></span>
-                    <span class="hamburgerline"></span>
-                </div>
-                <span class="navdivider" id="navdivider"></span>
-            </nav>
-            <div class="themenu" id="themenu">
-                    <p class="itemlink" destination="#arrow" secdestination="aboutme">
-                        About
-                        <span class="underline" id="underline"></span>
-                    </p>
-                    <p class="itemlink" id="itemlink" destination="#arrow" secdestination="projects">
-                        Projects
-                        <span class="underline" id="underline"></span>
-                    </p>
-                    <p class="itemlink" destination="#mobilewhatiknow">
-                        What I know
-                        <span class="underline" id="underline"></span>
-                    </p>
-                    <a href="mailto:contact@erikthorsell.com" class="itemlink" id="itemlink">
-                        Contact
-                        <span class="underline" id="underline"></span>
-                    </a>
-                    <div class="sourcecode" id="sourcecode">
-                        <p>psst, are you looking for the source code?</p>
-                        <a href="https://github.com/erik-thorsell/erik-thorsell.github.io/" target="_blank">Click Here.</a>
-                        
-                    </div>
-                </div>
-            <div class="mobilelanding menuhide" id="mobilelanding">
-                <div class="mobilelandingcontent" id="mobilelandingcontent">
-                    <h1>I'm Erik Thorsell</h1>
-                    <p class="agereplace">I'm a NaN-year-old developer from Sweden.</p>
-                    <a href="#arrow" class="mobilelandingbutton">Learn more</a>
-                    <a href="#arrow" class="arrow" id="arrow">></a>
-                </div>
-            </div>
-            <div class="mobileaboutprojects menuhide">
-                <div class="aboutme-front">
-                    <h1>About Me<div class="horizontaldivider"></div></h1>
-                    <div class="aboutmeinformation">
-                        <p class="agereplace">Hey! My name is Erik Thorsell, and I'm a NaN-year-old developer from Sweden, Gothenburg.</p>
-                        <p>I have been coding for about 4 years now, and in this timespan, I have learned a lot of different languages and frameworks.</p>
-                        <p>My current main focus is my API wrapper, NextGuild. Click this card to check it out!</p>
-                    </div>
-                    <p class="smallclickme">Click me!</p>
-                </div>
-                <div class="projects-back">
-                    <h1>Projects<div class="horizontaldivider"></div></h1>
-                    <div class="projectscards">
-                        <div class="projectcard" destination="https://github.com/erik-thorsell/nextguild">
-                            <img src="assets/nextguild.png" height="40" draggable="false"/>
-                            <h2><span class="pyyellow">Next</span><span class="pyblue">Guild</span></h2>
-                            <p>A Guilded API wrapper</p>
-                        </div>
-                        <div class="projectcard" destination="https://github.com/erik-thorsell/erik-thorsell.github.io">
-                            <h2>Portfolio</h2>
-                            <p>This website!</p>
-                        </div>
-                    </div>
-                    <p class="nmanymore">And many more that aren't open source</p>
-                    <p class="smallclickme">Click me!</p>
-                </div>
-            </div>
-            <div class="mobilewhatiknow menuhide">
-                <h1>What I Know</h1>
-                <div class="whatiknowcards" id="whatiknowcards">
-                    <div class="card" type="python">
-                        <img src="assets/python.svg" height="40" draggable="false"/>
-                        <p>Python</p>
-                    </div>
-                    <div class="card" type="html">
-                        <img src="assets/html5.svg" height="40" draggable="false"/>
-                        <p>HTML</p>
-                    </div>
-                    <div class="card" type="css">
-                        <img src="assets/css3.svg" height="40" draggable="false"/>
-                        <p>CSS</p>
-                    </div>
-                    <div class="card" type="js">
-                        <img src="assets/javascript.svg" height="40" draggable="false"/>
-                        <p>JavaScript</p>
-                    </div>
-                    <div class="card" type="sql">
-                        <img src="assets/sqlite.svg" height="40" draggable="false"/>
-                        <p>SQLite</p>
-                    </div>
-                    <div class="card" type="git">
-                        <img src="assets/git.svg" height="40" draggable="false"/>
-                        <p>Git</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mobilelinks">
-                <div class="links">
-                    <a href="https://github.com/erik-thorsell" target="_blank">
-                        <img src="assets/github.png" width="30" height="30" title="Github" alt="Github" draggable="false">
-                    </a>
-                    <a href="https://discordapp.com/users/441246020785930260" target="_blank">
-                        <img src="assets/discord.png" width="30" height="30" title="Discord" alt="Discord" draggable="false"/>
-                    </a>
-                    <a href="https://guilded.gg/u/kid" target="_blank">
-                        <img src="assets/guilded.png" width="30" height="30" title="Guilded" alt="Guilded" draggable="false"/>
-                    </a>
-                </div>
-                <p>Made with <span class="red">♥</span> by Erik Thorsell</p>
-            </div>
-        </div>
     <!-- The loader -->
     <div class="loader"></div>
 </body>
