@@ -5,7 +5,7 @@ This website took approx. ``30`` hours to make, so I hope you enjoy it! 🙂
 
 ## Links
 My own domain   | [erikthorsell.com](https://erikthorsell.com) <br>
-Github's domain | [erik-thorsell.github.com](https://erik-thorsell.github.com)
+Github's domain | [erik-thorsell.github.io](https://erik-thorsell.github.io)
 
 
 ### Timeline
