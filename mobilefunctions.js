@@ -137,7 +137,7 @@ function greetMessage(element, message, timeout = NaN) {
             }, 100 * i);
           }
           sourcecode.style.opacity = '1';
-        }, 400);
+        }, 300);
       }, 400);
     }
   }
