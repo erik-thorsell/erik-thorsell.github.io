@@ -183,6 +183,7 @@ function greetMessage(element, message, timeout = NaN) {
         const attribute = itemlinks[i].getAttribute('destination');
         closeMenu();
         setTimeout(function(){
+          window.location.href = attribute;
           if (attribute == '#arrow') {
             const secattribute = itemlinks[i].getAttribute('secdestination');
             if (secattribute == 'aboutme') {
@@ -191,7 +192,6 @@ function greetMessage(element, message, timeout = NaN) {
               card.classList.add('is-flipped');
             }
           }
-          window.location.href = attribute;
         }, 600);
       });
     }
