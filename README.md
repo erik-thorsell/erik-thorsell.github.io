@@ -12,6 +12,7 @@ Github's domain | [erik-thorsell.github.io](https://erik-thorsell.github.io)
 ``19/03/2023`` | Project started 📝 <br>
 ``20/03/2023`` | Website released with an "under construction" title 🚧 <br>
 ``04/04/2023`` | Officially released 🎉 <br>
+``12/07/2023`` | Mobile version of the website released 🥳
 ..to be continued
 
 
