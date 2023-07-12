@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<body lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="overflow.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="desktopfunctions.js"></script>
     <script src="functions.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <title>Erik Thorsell</title>
 </head>
 <body>
-    <div class="container" id="container">
+    <!-- Desktop version -->
+    <div class="container mobilehide" id="container">
         <div class="taskbar mobilehide">
             <div class="icons">
                 <div class="tasktitles">Links</div>
@@ -177,37 +180,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Mobile version -->
-        <div class="mobile" id="mobile">
-
-            <!-- Buttons at the top -->
-            <div class="close"></div>
-            <div class="minimize"></div>
-            <div class="maximize"></div>
-
-            <!-- Other stuff do not change these -->
-            <div class="tab"></div>
-            <div class="topbar">
-                <img src='assets/arrow_backward.png' id="backward" height="20" draggable="false"/>
-                <img src='assets/arrow_forward.png' id="forward" height="20" draggable="false"/>
-                <img src='assets/refresh.png' id="refresh" height="20" draggable="false"/>
-                <div class="searchbar"></div>
-                <img src='assets/options.png' id="options" height="20" draggable="false"/>
-            </div>
-
-            <!-- The actual webpage content -->
-            <div class="mobilewebpage">
-                <h1>Sorry!</h1>
-                <h2>This website is not available for mobile</h2>
-                <div class="mobilelinks">
-                    <a href="https://github.com/erik-thorsell"><img src="assets/github.png" width="30" height="30" title="Github" alt="Github" draggable="false"/></a>
-                    <a href="https://discordapp.com/users/441246020785930260"><img src="assets/discord.png" width="30" height="30" title="Discord" alt="Discord" draggable="false"/></a>
-                    <a href="https://guilded.gg/u/kid"><img src="assets/guilded.png" width="30" height="30" title="Guilded" alt="Guilded" draggable="false"/></a>
-                </div>
-            </div>
-        </div>
-    
+    </div>
     <!-- The loader -->
     <div class="loader"></div>
 </body>

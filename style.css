@@ -2,13 +2,15 @@
 :root {
     --amp-main-color: #7449f5;
     --amp-darker-color: #4d31a1;
+    --projects-color: #4c4cff;
+    --projects-darker-color: #4c4cff;
     --amp-bg-color: #1c1b1e;
     --amp-dot-color: #3d3d3d;
     --amp-darker-dot-color: #2d2d2d;
     --amp-even-darker-dot-color: #1d1d1d;
     --infobox-bg-color: #18171a;
 }
-
+ 
 
 
 
@@ -27,11 +29,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
-    overflow: hidden;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-decoration: none;
+    background-color: var(--amp-bg-color);
 }
 a {
     color: inherit;
@@ -49,76 +52,18 @@ a {
 
 
 
-
-
-
-
-
-
-/*Mobile*/
-.mobile {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #dee0e3;
-    border-radius: 16px;
-    border: 1px solid #c0cfe2;
-    border-radius: 7px;
-    height: 50%;
-    min-height: 200px;
-    width: 50%;
-    min-width: 325px;
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
+.pyyellow {
+    color: #ffd343;
 }
-.mobilewebpage {
-    height: calc(100% - 35px);
-    width: 100%;
-    background-color: #00DBDE;
-    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color:white;
-    line-height: 0;
-    overflow-x: hidden;
+.pyblue {
+    color: #3776ab;
 }
-.mobilewebpage h2 {
-    font-size: 100%;
-    line-height: normal;
-    text-align: center;
-}
-.mobilelinks {
-    position: absolute;
-    bottom: 15%;
-    width: 25%;
-    min-width: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
+.red {
+    color: #ff0000;
+    margin-right: 2px;
+    margin-left: 2px;
 }
 
-
-
-
-
-
-/*Mobile Load*/
-
-@media only screen and (width < 768px) {
-    .mobile {
-        display: flex;
-    }
-    .mobilehide {
-        display: none;
-    }
-}
     
 
 
@@ -173,12 +118,16 @@ a {
 
 /*Background*/
 .container {
-    background: url(/assets/background.jpeg) no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+@media screen and (min-width: 600px) {
+    .container {
+        background: url(/assets/background.jpeg) no-repeat center center/cover;
+    }
 }
 
 
@@ -319,6 +268,7 @@ a {
 
 /*Applies to all windows*/
 .window {
+    overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -656,4 +606,392 @@ a {
 }
 .giticon:hover img{
     filter: invert(38%) sepia(92%) saturate(2257%) hue-rotate(343deg) brightness(101%) contrast(91%);
+}
+
+
+
+
+
+
+/* mobile */
+
+
+/* animations */
+/* go up and down */
+@keyframes updown {
+    0% {
+        transform: translateY(0px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(90deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(90deg);
+    }
+}
+
+
+
+
+
+
+.mobile {
+    background-color: var(--amp-bg-color);
+    display: none;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all .4s ease-in-out;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+
+/*the navbar*/
+nav {
+    display: none;
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease-in-out;
+    flex-direction: column;
+    line-height: 0;
+    background-color: var(--amp-bg-color);
+    z-index: 1001;
+}
+
+/* the text in the middle of the navbar. my name. */
+.navtitle {
+    display: none;
+    color: #f5f5f5;
+    font-size: 2em;
+    transition: all .4s ease-in-out;
+    overflow-wrap: normal;
+    text-align: center;
+    margin-right: 0px;
+    padding: 0;
+}
+#p1 {
+    margin-right: 10px;
+}
+#p1, #p2, #p3 {
+    transition: all .4s ease-in-out;
+}
+#p2 {
+    text-decoration: none;
+}
+
+/* just the divider. acts as the bottom border. */
+.navdivider {
+    display: flex;
+    background-color: #3c3c3c;
+    height: 2px !important;
+    width: 0%;
+    transition: all .4s ease-in-out;
+}
+
+/* navbar hamburgermenu */
+.hamburgermenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 5%;
+}
+/* each line for the icon */
+.hamburgerline {
+    opacity: 0;
+    background-color: #f5f5f59f;
+    height: 3px;
+    width: 100%;
+    margin: 2px 0px;
+    transition: all .4s ease-in-out;
+}
+
+/*the hamburger menu*/
+.themenu {
+    display: none;
+    flex-direction: column;
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+    z-index: 1000;
+    background-color: var(--amp-bg-color);
+}
+/* the underline for the menu items, has to be a separate element cause animation yes */
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0%;
+    transform: translateX(-50%);
+    background-color: #f5f5f5;
+    transition: all .4s ease-in-out;
+}
+/* the menu items */
+.itemlink {
+    opacity: 0;
+    position: relative; /* Add a relative position to the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f5;
+    font-size: 2em;
+    transition: all .4s ease-in-out;
+    overflow-wrap: normal;
+    text-align: center;
+    margin: 5%;
+    padding: 0;
+    text-decoration: none;
+}
+/* the link to the source code */
+.sourcecode {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 10%;
+    color: var(--amp-dot-color);
+    font-size: .75em;
+    line-height: 50%;
+    transition: all .4s ease-in-out;
+    justify-content: center;
+    align-items: center;
+}
+
+/* the landing page */
+.mobilelanding{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    color: #f5f5f5;
+    z-index: 1;
+    transition: all .4s ease-in-out;
+}
+/* the first content that the user sees */
+.mobilelandingcontent {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    transition: all .4s ease-in-out;
+}
+/* the arrow at the bottom of the landing page. ascii character */
+.arrow {
+    position: absolute;
+    bottom: 2.5%;
+    font-size: 1.5em;
+    animation: updown 3s infinite;
+    text-decoration: none;
+    color: #f5f5f5;
+    transition: all .4s ease-in-out;
+}
+
+/* every section */
+.mobileaboutprojects {
+    height: 60vh;
+    width: 100vw;
+    background-color: var(--amp-bg-color);
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.mobileaboutprojects h1 {
+    height: 20%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.aboutme-front {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5%;
+    margin: 5%;
+    
+    border-radius: 10px;
+}
+.aboutme-front h1 .horizontaldivider {
+    background-color: var(--projects-color);
+    width: 90%;
+}
+
+.projects-back {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5%;
+    margin: 5%;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+}
+.projects-back h1 {
+    color: white;
+}
+.projects-back h1 .horizontaldivider {
+    background-color: var(--projects-color);
+    width: 90%;
+}
+.projectscards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60%;
+}
+.projectscards h2 {
+    margin: 3%;
+    padding: 0;
+    font-size: 1.25em;
+}
+.projectscards p {
+    margin: 0;
+    padding: 0;
+    font-size: .75em;
+}
+.projectcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35% !important;
+    height: 55%;
+    background-color: rgba(0, 0, 0, 0.644);
+    border-radius: 4%;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 5%;
+}
+.nmanymore {
+    color: #f5f5f5;
+    position: absolute;
+    bottom: 15%;
+    font-size: .8em;
+}
+
+.aboutme-front,
+.projects-back {
+  width: 80%;
+  height: 50%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: all .4s ease-in-out;
+}
+
+.is-flipped .aboutme-front {
+    transform: rotateY(180deg);
+}
+
+.is-flipped .projects-back {
+    transform: rotateY(0);
+}
+.smallclickme {
+    position: absolute;
+    bottom: 5%;
+    color: var(--amp-dot-color);
+    font-size: .75em;
+    line-height: 50%;
+    transition: all .4s ease-in-out;
+}
+
+
+.mobilewhatiknow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100vw;
+    background-color: #161518;
+    color: #f5f5f5;
+    z-index: 1;
+    transition: all .4s ease-in-out;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.mobilewhatiknow h1 {
+    height: 20%;
+}
+
+.whatiknowcards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card {
+    width: 35vw;
+    height: 20vh;
+    color: #00000098;
+    background-color: #ffffff0a;
+    border-radius: 4%;
+    margin: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease-in-out;
+    border: 3px solid #00000098;
+}
+
+
+.mobilelinks {
+    background-color: #0b0b0c;
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.mobilelinkscontent {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.mobilelinks p {
+    color: #f5f5f596;
+    font-size: .75em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 7.5%;
 }
