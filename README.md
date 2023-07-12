@@ -1,7 +1,7 @@
 # My portfolio website
 This is my website, made to showcase my knowledge, dedication and creativity. <br>
 Everything is custom-made; no libraries what so ever. Simply just plain HTML, CSS and JavaScript. <br>
-This website took approx. ``30`` hours to make, so I hope you enjoy it! 🙂
+This website took approx. ``50`` hours to make, so I hope you enjoy it! 🙂
 
 ## Links
 My own domain   | [erikthorsell.com](https://erikthorsell.com) <br>
