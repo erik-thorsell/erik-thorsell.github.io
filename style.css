@@ -947,6 +947,10 @@ nav {
 .mobilewhatiknow h1 {
     height: 20%;
 }
+.mobilewhatiknow p {
+    color: var(--amp-dot-color);
+    font-size: .75em;
+}
 
 .whatiknowcards {
     display: flex;
