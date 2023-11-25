@@ -1,0 +1,166 @@
+{
+    "classes":
+    {
+        "NAIADM": {
+            "color": "#38343c",
+            "icon": "computer"
+        },
+        "SAMSAM": {
+            "color":"#3FFA500",
+            "icon": "domain"
+        },
+        "ENTENR": {
+            "color": "#7CFC00",
+            "icon": "storefront"
+        },
+        "Resurstid": {
+            "color": "#964B00",
+            "icon": "description"
+        },
+        "NAINAE":{
+            "color": "#6363f2",
+            "icon": "menu_book"
+        },
+        "RELREL": {
+            "color": "#6363f2",
+            "icon": "church"
+        },
+        "ELEELR": {
+            "color": "#38343c",
+            "icon": "computer"
+        },
+        "Språkstöd": {
+            "color": "#964B00",
+            "icon": "description"
+        },
+        "HISHIS": {
+            "color": "#964B00",
+            "icon": "history_edu"
+        },
+        "GYAREE": {
+            "color": "#ffd700",
+            "icon": "article"
+        },
+        "ENGENG": {
+            "color": "#4062bf",
+            "icon": "translate"
+        },
+        "Stöd": {
+            "color": "#964B00",
+            "icon": "description"
+        },
+        "IDRIDR": {
+            "color": "#FFA500",
+            "icon": "sports_basketball"
+        },
+        "SVASVA": {
+            "color": "#3b3ecc",
+            "icon": "translate"
+        },
+        "TIATIL": {
+            "color": "#38343c",
+            "icon": "code"
+        },
+        "WESWEB": {
+            "color": "#38343c",
+            "icon": "wifi"
+        },
+        "NAKNAK": {
+            "color": "#008000",
+            "icon": "weather_mix"
+        },
+        "KLF": {
+            "color": "#964B00",
+            "icon": "description"
+        },
+        "DAODAT": {
+            "color": "#38343c",
+            "icon": "wifi"
+        },
+        "PRRPRR": {
+            "color": "#38343c",
+            "icon": "code"
+        },
+        "INSKOM": {
+            "color": "#38343c",
+            "icon": "bigtop_updates"
+        },
+        "DIGDIG": {
+            "color": "#eb1bf2",
+            "icon": "brush"
+        },
+        "MATMAT": {
+            "color": "#e63e3e",
+            "icon": "calculate"
+        },
+        "SVESVE": {
+            "color": "#3b3ecc",
+            "icon": "translate"
+        },
+        "NAINAV": {
+            "color": "#38343c",
+            "icon": "rss_feed"
+        },
+        "MEKMEK": {
+            "color": "#38343c",
+            "icon": "construction"
+        },
+        "ELRELK": {
+            "color": "#FFFF00",
+            "icon": "bolt"
+        },
+        "ENEENE": {
+            "color": "#ADFF2F",
+            "icon": "energy"
+        },
+        "JURAFF": {
+            "color": "#315dd6",
+            "icon": "gavel"
+        },
+        "GYARNA": {
+            "color": "#ffd700",
+            "icon": "article"
+        },
+        "NAVNAT": {
+            "color": "#0fdb64",
+            "icon": "genetics"
+        },
+        "MODDEU": {
+            "color": "#4062bf",
+            "icon": "translate"
+        },
+        "FYSFYS": {
+            "color": "#e63e3e",
+            "icon": "calculate"
+        },
+        "BIOBIT": {
+            "color": "#0fdb64",
+            "icon": "genetics"
+        },
+        "MODFRA": {
+            "color": "#4062bf",
+            "icon": "translate"
+        },
+        "BIOBIO": {
+            "color": "#0fdb64",
+            "icon": "genetics"
+        },
+        "KEMKEM": {
+            "color": "9F2B68",
+            "icon": "science"
+        },
+        "MODSPA": {
+            "color": "#4062bf",
+            "icon": "translate"
+        },
+        "WEUWEB": {
+            "color": "#38343c",
+            "icon": "code"
+        },
+        "DAODAC": {
+            "color": "#38343c",
+            "icon": "wifi"
+        }
+
+    }
+}
