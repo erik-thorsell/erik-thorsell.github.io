@@ -2,164 +2,204 @@
     "classes":
     {
         "NAIADM": {
-            "color": "#38343c",
-            "icon": "computer"
+            "color": "#453754",
+            "icon": "computer",
+            "name": "Nätverksadministration"
         },
         "SAMSAM": {
-            "color":"#3FFA500",
-            "icon": "domain"
+            "color":"#ff935b",
+            "icon": "domain",
+            "name": "Samhällskunskap"
         },
         "ENTENR": {
-            "color": "#7CFC00",
-            "icon": "storefront"
+            "color": "#79d0d7",
+            "icon": "storefront",
+            "name": "Entreprenörskap"
         },
         "Resurstid": {
-            "color": "#964B00",
-            "icon": "description"
+            "color": "#a27649",
+            "icon": "description",
+            "name": "Resurstid"
         },
         "NAINAE":{
             "color": "#6363f2",
-            "icon": "menu_book"
+            "icon": "menu_book",
+            "name": "Nätverkssäkerhet"
         },
         "RELREL": {
             "color": "#6363f2",
-            "icon": "church"
+            "icon": "church",
+            "name": "Religion"
         },
         "ELEELR": {
-            "color": "#38343c",
-            "icon": "computer"
+            "color": "#453754",
+            "icon": "computer",
+            "name": "Elektronik"
         },
         "Språkstöd": {
-            "color": "#964B00",
-            "icon": "description"
+            "color": "#a27649",
+            "icon": "description",
+            "name": "Språkstöd"
         },
         "HISHIS": {
-            "color": "#964B00",
-            "icon": "history_edu"
+            "color": "#a27649",
+            "icon": "history_edu",
+            "name": "Historia"
         },
         "GYAREE": {
-            "color": "#ffd700",
-            "icon": "article"
+            "color": "#f4dc5b",
+            "icon": "article",
+            "name": "Gymnasiearbete"
         },
         "ENGENG": {
             "color": "#4062bf",
-            "icon": "translate"
+            "icon": "translate",
+            "name": "Engelska"
         },
         "Stöd": {
-            "color": "#964B00",
-            "icon": "description"
+            "color": "#a27649",
+            "icon": "description",
+            "name": "Stöd"
         },
         "IDRIDR": {
-            "color": "#FFA500",
-            "icon": "sports_basketball"
+            "color": "#ffc356",
+            "icon": "sports_basketball",
+            "name": "Idrott"
         },
         "SVASVA": {
-            "color": "#3b3ecc",
-            "icon": "translate"
+            "color": "#6063ee",
+            "icon": "translate",
+            "name": "Svenska som andraspråk"
         },
         "TIATIL": {
-            "color": "#38343c",
-            "icon": "code"
+            "color": "#453754",
+            "icon": "code",
+            "name": "Tillämpad programmering"
         },
         "WESWEB": {
-            "color": "#38343c",
-            "icon": "wifi"
+            "color": "#453754",
+            "icon": "wifi",
+            "name": "Webbserverutveckling"
         },
         "NAKNAK": {
-            "color": "#008000",
-            "icon": "cloud"
+            "color": "#67c16f",
+            "icon": "cloud",
+            "name": "Naturkunskap"
         },
         "KLF": {
-            "color": "#964B00",
-            "icon": "description"
+            "color": "#a27649",
+            "icon": "description",
+            "name": "KLF"
         },
         "DAODAT": {
-            "color": "#38343c",
-            "icon": "wifi"
+            "color": "#453754",
+            "icon": "wifi",
+            "name": "Datorteknik"
         },
         "PRRPRR": {
-            "color": "#38343c",
-            "icon": "code"
+            "color": "#453754",
+            "icon": "code",
+            "name": "Programmering"
         },
         "INSKOM": {
-            "color": "#38343c",
-            "icon": "bigtop_updates"
+            "color": "#453754",
+            "icon": "bigtop_updates",
+            "name": "Kommunikationsnät"
         },
         "DIGDIG": {
-            "color": "#eb1bf2",
-            "icon": "brush"
+            "color": "#eb75ef",
+            "icon": "brush",
+            "name": "Digitalt skapande"
         },
         "MATMAT": {
-            "color": "#e63e3e",
-            "icon": "calculate"
+            "color": "#fb6363",
+            "icon": "calculate",
+            "name": "Matematik"
         },
         "SVESVE": {
-            "color": "#3b3ecc",
-            "icon": "translate"
+            "color": "#6063ee",
+            "icon": "translate",
+            "name": "Svenska"
         },
         "NAINAV": {
-            "color": "#38343c",
-            "icon": "rss_feed"
+            "color": "#453754",
+            "icon": "rss_feed",
+            "name": "Nätverksadministration"
         },
         "MEKMEK": {
-            "color": "#38343c",
-            "icon": "construction"
+            "color": "#453754",
+            "icon": "construction",
+            "name": "Mekatronik"
         },
         "ELRELK": {
-            "color": "#FFFF00",
-            "icon": "bolt"
+            "color": "#e9e95c",
+            "icon": "bolt",
+            "name": "Elektromekanik"
         },
         "ENEENE": {
-            "color": "#ADFF2F",
-            "icon": "energy"
+            "color": "#b7ee62",
+            "icon": "energy",
+            "name": "Energiteknik"
         },
         "JURAFF": {
-            "color": "#315dd6",
-            "icon": "gavel"
+            "color": "#3d67dc",
+            "icon": "gavel",
+            "name": "Juridik"
         },
         "GYARNA": {
-            "color": "#ffd700",
-            "icon": "article"
+            "color": "#f4dc5b",
+            "icon": "article",
+            "name": "Gymnasiearbete"
         },
         "NAVNAT": {
             "color": "#0fdb64",
-            "icon": "genetics"
+            "icon": "genetics",
+            "name": "Naturvetenskaplig specialisering"
         },
         "MODDEU": {
             "color": "#4062bf",
-            "icon": "translate"
+            "icon": "translate",
+            "name": "Tyska"
         },
         "FYSFYS": {
-            "color": "#e63e3e",
-            "icon": "calculate"
+            "color": "#fb6363",
+            "icon": "calculate",
+            "name": "Fysik"
         },
         "BIOBIT": {
             "color": "#0fdb64",
-            "icon": "genetics"
+            "icon": "genetics",
+            "name": "Bioteknik"
         },
         "MODFRA": {
             "color": "#4062bf",
-            "icon": "translate"
+            "icon": "translate",
+            "name": "Franska"
         },
         "BIOBIO": {
             "color": "#0fdb64",
-            "icon": "genetics"
+            "icon": "genetics",
+            "name": "Biologi"
         },
         "KEMKEM": {
-            "color": "9F2B68",
-            "icon": "science"
+            "color": "#0fdb64",
+            "icon": "science",
+            "name": "Kemi"
         },
         "MODSPA": {
             "color": "#4062bf",
-            "icon": "translate"
+            "icon": "translate",
+            "name": "Spanska"
         },
         "WEUWEB": {
-            "color": "#38343c",
-            "icon": "code"
+            "color": "#453754",
+            "icon": "code",
+            "name": "Webbutveckling"
         },
         "DAODAC": {
-            "color": "#38343c",
-            "icon": "wifi"
+            "color": "#453754",
+            "icon": "wifi",
+            "name": "Dator- och nätverksteknik"
         }
 
     }
